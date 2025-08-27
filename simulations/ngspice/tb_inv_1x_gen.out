@@ -1,0 +1,42 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: ** sch_path: /home/designer/shared/amaru/analog/tb/tb_inv_1x_gen.sch
+
+binary raw file "/home/designer/shared/amaru/simulations/ngspice/tb_inv_1x_gen.raw"
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+No. of Data Columns : 86  
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                        1.2
+z                                          1.2
+vss                                          0
+a                                            0
+v3#branch                          3.42303e-11
+v2#branch                          5.95076e-11
+v1#branch                         -5.95076e-11
+
+
+No. of Data Rows : 471
+
+Total analysis time (seconds) = 0.216047
+
+Total elapsed time (seconds) = 0.358 
+
+Total DRAM available = 7780.359 MB.
+DRAM currently available = 5007.211 MB.
+Maximum ngspice program size =  530.441 MB.
+Current ngspice program size =   15.211 MB.
+
+Shared ngspice pages =   10.754 MB.
+Text (code) pages =    5.980 MB.
+Stack = 0 bytes.
+Library pages =   61.281 MB.
+
