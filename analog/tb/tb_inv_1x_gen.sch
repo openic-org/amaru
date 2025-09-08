@@ -41,5 +41,7 @@ C {code_shown.sym} 640 -190 0 0 {name=MODEL only_toplevel=false value="
 .lib cornerMOSlv.lib mos_tt
 "}
 C {inv_1x_gen.sym} 420 -280 0 0 {name=x1
-schematic="test_pcell.py(1,2)"
+wn_um=2
+wp_um=4
+schematic="test_pcell.py(@wn_um\\,@wp_um\\)"
 tclcommand="edit_file [abs_sym_path test_pcell.py]"}

@@ -4,7 +4,7 @@ V1 VDD GND 1.2
 C1 Z VSS 10f m=1
 V2 VSS GND 0
 V3 A VSS dc 0 pulse 0 1.2 2n 100p 100p 2n 4n
-x1 VDD A Z VSS test_pcell_py_1_2
+x1 VDD A Z VSS test_pcell_py_2_4
 **** begin user architecture code
 
 
@@ -34,16 +34,16 @@ XM2 Z A VDD VDD sg13_lv_pmos w=2u l=0.13u ng=1 m=1
 .ends
 
 
-* expanding   symbol:  test_pcell.py(1,2) # of pins=4
+* expanding   symbol:  test_pcell.py(2,4) # of pins=4
 ** sym_path: /home/designer/shared/amaru/analog/core/inv_1x_gen.sym
 ** sch_path: /home/designer/shared/amaru/analog/core/test_pcell.py
-.subckt test_pcell_py_1_2 VDD A Z VSS
+.subckt test_pcell_py_2_4 VDD A Z VSS
 *.iopin VDD
 *.iopin VSS
 *.iopin A
 *.iopin Z
-XM1 Z A VSS VSS sg13_lv_nmos w=1.0u l=0.13u ng=1 m=1
-XM2 Z A VDD VDD sg13_lv_pmos w=2.0u l=0.13u ng=1 m=1
+XM1 Z A VSS VSS sg13_lv_nmos w=2.0u l=0.13u ng=1 m=1
+XM2 Z A VDD VDD sg13_lv_pmos w=4.0u l=0.13u ng=1 m=1
 .ends
 
 .GLOBAL GND
