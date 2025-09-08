@@ -1,0 +1,68 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: ** sch_path: /home/designer/shared/amaru/analog/tb/tb_nmos_lv_vds.sch
+
+Reset re-loads circuit ** sch_path: /home/designer/shared/amaru/analog/tb/tb_nmos_lv_vds.sch
+
+Circuit: ** sch_path: /home/designer/shared/amaru/analog/tb/tb_nmos_lv_vds.sch
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+No. of Data Rows : 151
+ASCII raw file "nmoslv_vds3.raw"
+Reset re-loads circuit ** sch_path: /home/designer/shared/amaru/analog/tb/tb_nmos_lv_vds.sch
+
+Circuit: ** sch_path: /home/designer/shared/amaru/analog/tb/tb_nmos_lv_vds.sch
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+No. of Data Rows : 151
+ASCII raw file "nmoslv_vds3.raw"
+Reset re-loads circuit ** sch_path: /home/designer/shared/amaru/analog/tb/tb_nmos_lv_vds.sch
+
+Circuit: ** sch_path: /home/designer/shared/amaru/analog/tb/tb_nmos_lv_vds.sch
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+No. of Data Rows : 151
+ASCII raw file "nmoslv_vds3.raw"
+Reset re-loads circuit ** sch_path: /home/designer/shared/amaru/analog/tb/tb_nmos_lv_vds.sch
+
+Circuit: ** sch_path: /home/designer/shared/amaru/analog/tb/tb_nmos_lv_vds.sch
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+No. of Data Rows : 151
+ASCII raw file "nmoslv_vds3.raw"
+ASCII raw file "/home/designer/shared/amaru/simulations/ngspice/tb_nmos_lv_vds.raw"
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+No. of Data Columns : 2  
+
+No. of Data Rows : 151
+
+Total analysis time (seconds) = 0.0221199
+
+Total elapsed time (seconds) = 0.210 
+
+Total DRAM available = 7780.355 MB.
+DRAM currently available = 4857.719 MB.
+Maximum ngspice program size =  530.406 MB.
+Current ngspice program size =   15.180 MB.
+
+Shared ngspice pages =   10.762 MB.
+Text (code) pages =    5.980 MB.
+Stack = 0 bytes.
+Library pages =   61.246 MB.
+

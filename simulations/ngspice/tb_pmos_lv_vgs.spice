@@ -1,0 +1,66 @@
+** sch_path: /home/designer/shared/amaru/analog/tb/tb_pmos_lv_vgs.sch
+**.subckt tb_pmos_lv_vgs
+V1 VDD GND 1.5
+V2 VSS GND 0.75
+V3 VG GND 0.75
+XM1 VSS VG VDD VDD sg13_lv_pmos w=widthp l=lengthp ng=1 m=1
+**** begin user architecture code
+
+
+.param temp=27
+.param widthp=1u
+.param lengthp=0.5u
+.dc v3 0 1.5 0.01
+.save @n.xm1.nsg13_lv_pmos[ids]
+.save @n.xm1.nsg13_lv_pmos[vth]
+.save @n.xm1.nsg13_lv_pmos[gm]
+.save @n.xm1.nsg13_lv_pmos[gmb]
+.save @n.xm1.nsg13_lv_pmos[gds]
+.save @n.xm1.nsg13_lv_pmos[cgg]
+.save @n.xm1.nsg13_lv_pmos[cgs]
+.save @n.xm1.nsg13_lv_pmos[cgd]
+.save @n.xm1.nsg13_lv_pmos[cgb]
+.save @n.xm1.nsg13_lv_pmos[cdd]
+.save @n.xm1.nsg13_lv_pmos[css]
+.save @n.xm1.nsg13_lv_pmos[cgsol]
+.save @n.xm1.nsg13_lv_pmos[cgdol]
+.save @n.xm1.nsg13_lv_pmos[cjs]
+.save @n.xm1.nsg13_lv_pmos[cjd]
+
+.control
+  set filetype = ascii
+  foreach wval 10u 50u 200u 500u
+    alterparam widthp = $wval
+    reset
+    run
+    let ids = @n.xm1.nsg13_lv_pmos[ids]
+    let vth = @n.xm1.nsg13_lv_pmos[vth]
+    let gm = @n.xm1.nsg13_lv_pmos[gm]
+    let gmb = @n.xm1.nsg13_lv_pmos[gmb]
+    let gds = @n.xm1.nsg13_lv_pmos[gds]
+    let cgg = @n.xm1.nsg13_lv_pmos[cgg]
+    let cgs = @n.xm1.nsg13_lv_pmos[cgs]
+    let cgd = @n.xm1.nsg13_lv_pmos[cgd]
+    let cgb = @n.xm1.nsg13_lv_pmos[cgb]
+    let cdd = @n.xm1.nsg13_lv_pmos[cdd]
+    let css = @n.xm1.nsg13_lv_pmos[css]
+    let cgsol = @n.xm1.nsg13_lv_pmos[cgsol]
+    let cgdol = @n.xm1.nsg13_lv_pmos[cgdol]
+    let cjs = @n.xm1.nsg13_lv_pmos[cjs]
+    let cjd = @n.xm1.nsg13_lv_pmos[cjd]
+    write pmoslv_vgs2.raw ids vth gm gmb gds cgg cgs cgd cgb cdd css cgsol cgdol cjs cjd
+    set appendwrite
+  end
+.endc
+
+
+
+
+
+.lib cornerMOSlv.lib mos_tt
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end
