@@ -1,0 +1,410 @@
+** sch_path: /home/designer/shared/amaru/analog/tb/tb_cap_bank.sch
+**.subckt tb_cap_bank
+L1 net1 VIN 100n m=1
+R1 VIP net1 6m m=1
+C1 VIP VIN 0.39578p m=1
+C2 VIN VIP 0.649p m=1
+VPORT VIP VIN dc 0 ac 1
+V1 CTL_1 GND 0
+V2 CTL_2 GND 0
+V3 CTL_3 GND 0
+V4 CTL_4 GND 1.1
+V5 CTL_5 GND 1.1
+V6 CTL_6 GND 1.1
+V7 CTL_7 GND 1.1
+V8 CTL_8 GND 1.1
+V9 CTL_9 GND 1.1
+V10 CTL_10 GND 1.1
+V11 CTL_11 GND 1.1
+V12 CTL_12 GND 1.1
+V13 CTL_13 GND 1.1
+V14 CTL_14 GND 1.1
+V15 CTL_15 GND 1.1
+V16 CTL_16 GND 1.1
+x1 VIP VSS CTL_1 VIN cap_bank_unit
+V17 VSS GND 0
+x2 VIP VSS CTL_2 VIN cap_bank_unit
+x3 VIP VSS CTL_3 VIN cap_bank_unit
+x4 VIP VSS CTL_4 VIN cap_bank_unit
+x5 VIP VSS CTL_5 VIN cap_bank_unit
+x6 VIP VSS CTL_6 VIN cap_bank_unit
+x7 VIP VSS CTL_7 VIN cap_bank_unit
+x8 VIP VSS CTL_8 VIN cap_bank_unit
+x9 VIP VSS CTL_9 VIN cap_bank_unit
+x10 VIP VSS CTL_10 VIN cap_bank_unit
+x11 VIP VSS CTL_11 VIN cap_bank_unit
+x12 VIP VSS CTL_12 VIN cap_bank_unit
+x13 VIP VSS CTL_13 VIN cap_bank_unit
+x14 VIP VSS CTL_14 VIN cap_bank_unit
+x15 VIP VSS CTL_15 VIN cap_bank_unit
+**** begin user architecture code
+
+
+
+.save all
+.save V(VIP) V(VIN) V(VIP, VIN)
+.save I(VPORT)
+
+
+.control
+  set filetype=ascii        ; ASCII .raw (human-readable)
+
+  foreach test_case 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+    if ($test_case = 0)
+      alter v1 dc = 0
+      alter v2 dc = 0
+      alter v3 dc = 0
+      alter v4 dc = 0
+      alter v5 dc = 0
+      alter v6 dc = 0
+      alter v7 dc = 0
+      alter v8 dc = 0
+      alter v9 dc = 0
+      alter v10 dc = 0
+      alter v11 dc = 0
+      alter v12 dc = 0
+      alter v13 dc = 0
+      alter v14 dc = 0
+      alter v15 dc = 0
+      alter v16 dc = 0
+    else
+      if ($test_case = 1)
+      alter v1 dc = 1.2
+      alter v2 dc = 0
+      alter v3 dc = 0
+      alter v4 dc = 0
+      alter v5 dc = 0
+      alter v6 dc = 0
+      alter v7 dc = 0
+      alter v8 dc = 0
+      alter v9 dc = 0
+      alter v10 dc = 0
+      alter v11 dc = 0
+      alter v12 dc = 0
+      alter v13 dc = 0
+      alter v14 dc = 0
+      alter v15 dc = 0
+      alter v16 dc = 0
+      else
+      if ($test_case = 2)
+      alter v1 dc = 1.2
+      alter v2 dc = 1.2
+      alter v3 dc = 0
+      alter v4 dc = 0
+      alter v5 dc = 0
+      alter v6 dc = 0
+      alter v7 dc = 0
+      alter v8 dc = 0
+      alter v9 dc = 0
+      alter v10 dc = 0
+      alter v11 dc = 0
+      alter v12 dc = 0
+      alter v13 dc = 0
+      alter v14 dc = 0
+      alter v15 dc = 0
+      alter v16 dc = 0
+      else
+      if ($test_case = 3)
+      alter v1 dc = 1.2
+      alter v2 dc = 1.2
+      alter v3 dc = 1.2
+      alter v4 dc = 0
+      alter v5 dc = 0
+      alter v6 dc = 0
+      alter v7 dc = 0
+      alter v8 dc = 0
+      alter v9 dc = 0
+      alter v10 dc = 0
+      alter v11 dc = 0
+      alter v12 dc = 0
+      alter v13 dc = 0
+      alter v14 dc = 0
+      alter v15 dc = 0
+      alter v16 dc = 0
+      else
+      if ($test_case = 4)
+      alter v1 dc = 1.2
+      alter v2 dc = 1.2
+      alter v3 dc = 1.2
+      alter v4 dc = 1.2
+      alter v5 dc = 0
+      alter v6 dc = 0
+      alter v7 dc = 0
+      alter v8 dc = 0
+      alter v9 dc = 0
+      alter v10 dc = 0
+      alter v11 dc = 0
+      alter v12 dc = 0
+      alter v13 dc = 0
+      alter v14 dc = 0
+      alter v15 dc = 0
+      alter v16 dc = 0
+      else
+      if ($test_case = 5)
+      alter v1 dc = 1.2
+      alter v2 dc = 1.2
+      alter v3 dc = 1.2
+      alter v4 dc = 1.2
+      alter v5 dc = 1.2
+      alter v6 dc = 0
+      alter v7 dc = 0
+      alter v8 dc = 0
+      alter v9 dc = 0
+      alter v10 dc = 0
+      alter v11 dc = 0
+      alter v12 dc = 0
+      alter v13 dc = 0
+      alter v14 dc = 0
+      alter v15 dc = 0
+      alter v16 dc = 0
+      else
+      if ($test_case = 6)
+      alter v1 dc = 1.2
+      alter v2 dc = 1.2
+      alter v3 dc = 1.2
+      alter v4 dc = 1.2
+      alter v5 dc = 1.2
+      alter v6 dc = 1.2
+      alter v7 dc = 0
+      alter v8 dc = 0
+      alter v9 dc = 0
+      alter v10 dc = 0
+      alter v11 dc = 0
+      alter v12 dc = 0
+      alter v13 dc = 0
+      alter v14 dc = 0
+      alter v15 dc = 0
+      alter v16 dc = 0
+      else
+      if ($test_case = 7)
+      alter v1 dc = 1.2
+      alter v2 dc = 1.2
+      alter v3 dc = 1.2
+      alter v4 dc = 1.2
+      alter v5 dc = 1.2
+      alter v6 dc = 1.2
+      alter v7 dc = 1.2
+      alter v8 dc = 0
+      alter v9 dc = 0
+      alter v10 dc = 0
+      alter v11 dc = 0
+      alter v12 dc = 0
+      alter v13 dc = 0
+      alter v14 dc = 0
+      alter v15 dc = 0
+      alter v16 dc = 0
+      else
+      if ($test_case = 8)
+      alter v1 dc = 1.2
+      alter v2 dc = 1.2
+      alter v3 dc = 1.2
+      alter v4 dc = 1.2
+      alter v5 dc = 1.2
+      alter v6 dc = 1.2
+      alter v7 dc = 1.2
+      alter v8 dc = 1.2
+      alter v9 dc = 0
+      alter v10 dc = 0
+      alter v11 dc = 0
+      alter v12 dc = 0
+      alter v13 dc = 0
+      alter v14 dc = 0
+      alter v15 dc = 0
+      alter v16 dc = 0
+      else
+      if ($test_case = 9)
+      alter v1 dc = 1.2
+      alter v2 dc = 1.2
+      alter v3 dc = 1.2
+      alter v4 dc = 1.2
+      alter v5 dc = 1.2
+      alter v6 dc = 1.2
+      alter v7 dc = 1.2
+      alter v8 dc = 1.2
+      alter v9 dc = 1.2
+      alter v10 dc = 0
+      alter v11 dc = 0
+      alter v12 dc = 0
+      alter v13 dc = 0
+      alter v14 dc = 0
+      alter v15 dc = 0
+      alter v16 dc = 0
+      else
+      if ($test_case = 10)
+      alter v1 dc = 1.2
+      alter v2 dc = 1.2
+      alter v3 dc = 1.2
+      alter v4 dc = 1.2
+      alter v5 dc = 1.2
+      alter v6 dc = 1.2
+      alter v7 dc = 1.2
+      alter v8 dc = 1.2
+      alter v9 dc = 1.2
+      alter v10 dc = 1.2
+      alter v11 dc = 0
+      alter v12 dc = 0
+      alter v13 dc = 0
+      alter v14 dc = 0
+      alter v15 dc = 0
+      alter v16 dc = 0
+      else
+      if ($test_case = 11)
+      alter v1 dc = 1.2
+      alter v2 dc = 1.2
+      alter v3 dc = 1.2
+      alter v4 dc = 1.2
+      alter v5 dc = 1.2
+      alter v6 dc = 1.2
+      alter v7 dc = 1.2
+      alter v8 dc = 1.2
+      alter v9 dc = 1.2
+      alter v10 dc = 1.2
+      alter v11 dc = 1.2
+      alter v12 dc = 0
+      alter v13 dc = 0
+      alter v14 dc = 0
+      alter v15 dc = 0
+      alter v16 dc = 0
+      else
+      if ($test_case = 12)
+      alter v1 dc = 1.2
+      alter v2 dc = 1.2
+      alter v3 dc = 1.2
+      alter v4 dc = 1.2
+      alter v5 dc = 1.2
+      alter v6 dc = 1.2
+      alter v7 dc = 1.2
+      alter v8 dc = 1.2
+      alter v9 dc = 1.2
+      alter v10 dc = 1.2
+      alter v11 dc = 1.2
+      alter v12 dc = 1.2
+      alter v13 dc = 0
+      alter v14 dc = 0
+      alter v15 dc = 0
+      alter v16 dc = 0
+      else
+      if ($test_case = 13)
+      alter v1 dc = 1.2
+      alter v2 dc = 1.2
+      alter v3 dc = 1.2
+      alter v4 dc = 1.2
+      alter v5 dc = 1.2
+      alter v6 dc = 1.2
+      alter v7 dc = 1.2
+      alter v8 dc = 1.2
+      alter v9 dc = 1.2
+      alter v10 dc = 1.2
+      alter v11 dc = 1.2
+      alter v12 dc = 1.2
+      alter v13 dc = 1.2
+      alter v14 dc = 0
+      alter v15 dc = 0
+      alter v16 dc = 0
+      else
+      if ($test_case = 14)
+      alter v1 dc = 1.2
+      alter v2 dc = 1.2
+      alter v3 dc = 1.2
+      alter v4 dc = 1.2
+      alter v5 dc = 1.2
+      alter v6 dc = 1.2
+      alter v7 dc = 1.2
+      alter v8 dc = 1.2
+      alter v9 dc = 1.2
+      alter v10 dc = 1.2
+      alter v11 dc = 1.2
+      alter v12 dc = 1.2
+      alter v13 dc = 1.2
+      alter v14 dc = 1.2
+      alter v15 dc = 0
+      alter v16 dc = 0
+      else
+      if ($test_case = 15)
+      alter v1 dc = 1.2
+      alter v2 dc = 1.2
+      alter v3 dc = 1.2
+      alter v4 dc = 1.2
+      alter v5 dc = 1.2
+      alter v6 dc = 1.2
+      alter v7 dc = 1.2
+      alter v8 dc = 1.2
+      alter v9 dc = 1.2
+      alter v10 dc = 1.2
+      alter v11 dc = 1.2
+      alter v12 dc = 1.2
+      alter v13 dc = 1.2
+      alter v14 dc = 1.2
+      alter v15 dc = 1.2
+      alter v16 dc = 0
+      else
+      alter v1 dc = 1.2
+      alter v2 dc = 1.2
+      alter v3 dc = 1.2
+      alter v4 dc = 1.2
+      alter v5 dc = 1.2
+      alter v6 dc = 1.2
+      alter v7 dc = 1.2
+      alter v8 dc = 1.2
+      alter v9 dc = 1.2
+      alter v10 dc = 1.2
+      alter v11 dc = 1.2
+      alter v12 dc = 1.2
+      alter v13 dc = 1.2
+      alter v14 dc = 1.2
+      alter v15 dc = 1.2
+      alter v16 dc = 1.2
+      end
+      end
+      end
+      end
+      end
+      end
+      end
+      end
+      end
+      end
+      end
+      end
+      end
+      end
+      end
+    end
+
+    run
+    ac lin 5000 300Meg 600Meg
+    *tran 0.1u 100u
+    let ZIN  = v(VIP, VIN)/i(VPORT)
+    let ABSZ = abs(ZIN)
+    let IMZ  = imag(ZIN)
+    let REZ  = real(ZIN)
+    meas ac F_res when IMZ=0
+    write tb_capb.raw ABSZ
+    set appendwrite
+  end
+.endc
+
+
+
+.lib cornerMOSlv.lib mos_tt
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  cap_bank_unit.sym # of pins=4
+** sym_path: /home/designer/shared/amaru/analog/core/cap_bank_unit.sym
+** sch_path: /home/designer/shared/amaru/analog/core/cap_bank_unit.sch
+.subckt cap_bank_unit VA VSS B VB
+*.iopin VA
+*.iopin VSS
+*.iopin B
+*.iopin VB
+C1 VA net2 68.84f m=1
+C2 VB net1 68.84f m=1
+XM1 net2 B net1 VSS sg13_lv_nmos w=6.23u l=0.13u ng=1 m=1
+XM2 net1 B VSS VSS sg13_lv_nmos w=6.23u l=0.13u ng=1 m=1
+XM3 net2 B VSS VSS sg13_lv_nmos w=6.23u l=0.13u ng=1 m=1
+.ends
+
+.GLOBAL GND
+.end

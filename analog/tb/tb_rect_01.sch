@@ -74,6 +74,7 @@ C {code_shown.sym} 130 -810 0 0 {name=NGSPICE only_toplevel=false value="
   let id4m2 = @n.x1.xm2.nsg13_lv_nmos[ids]
   let id4m3 = @n.x1.xm3.nsg13_lv_pmos[ids]
   let id4m4 = @n.x1.xm4.nsg13_lv_pmos[ids]
+  set filetype=ascii
   write tb_rect_01.raw v(VA) v(VB) v(VO1) v(VO2) v(VO3) v(VOUT) I(V1) I(V3) id1m1 id1m2 id1m3 id1m4 id4m1 id4m2 id4m3 id4m4
 .endc
 "}
