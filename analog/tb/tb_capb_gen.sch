@@ -4,24 +4,16 @@ K {}
 V {}
 S {}
 E {}
-T {External Antenna - L_ext} -520 90 0 0 1.2 1.2 {}
-T {External Capacitor - C_ext} -170 -510 0 0 1.2 1.2 {}
-N 40 40 220 40 {lab=VIN}
-N 450 40 600 40 {lab=VIN}
-N -280 40 -60 40 {lab=VIN}
-N 220 -140 220 40 {lab=VIN}
-N 220 -360 220 -200 {lab=VIP}
+N -160 40 -60 40 {lab=VIN}
+N 60 -140 60 40 {lab=VIN}
+N 60 -360 60 -200 {lab=VIP}
 N -280 -360 -280 -200 {lab=VIP}
 N -280 -140 -280 40 {lab=VIN}
-N 220 40 450 40 {lab=VIN}
-N 380 -170 410 -170 {lab=CTL_1}
+N 190 -170 220 -170 {lab=CTL_1}
 N 550 -170 560 -170 {lab=CTL_2}
-N 450 -360 450 -210 {lab=VIP}
+N 260 -360 260 -210 {lab=VIP}
 N 600 -360 600 -210 {lab=VIP}
-N 450 -360 600 -360 {lab=VIP}
-N -280 -360 -60 -360 {lab=VIP}
-N 40 -360 220 -360 {lab=VIP}
-N 220 -360 450 -360 {lab=VIP}
+N -160 -360 -60 -360 {lab=VIP}
 N 720 -170 750 -170 {lab=CTL_3}
 N 890 -170 900 -170 {lab=CTL_4}
 N 790 -360 790 -210 {lab=VIP}
@@ -74,9 +66,6 @@ N 1400 -360 1400 -210 {lab=VIP}
 N 1150 -360 1400 -360 {lab=VIP}
 N 1150 -360 1150 -210 {lab=VIP}
 N 940 -360 1150 -360 {lab=VIP}
-N 3070 40 3230 40 {lab=VIN}
-N 3230 -360 3230 -210 {lab=VIP}
-N 3070 -360 3230 -360 {lab=VIP}
 N 430 120 430 160 {lab=CTL_1}
 N 430 220 430 250 {lab=GND}
 N 520 120 520 160 {lab=CTL_2}
@@ -107,7 +96,7 @@ N 1620 120 1620 160 {lab=CTL_14}
 N 1620 220 1620 250 {lab=GND}
 N 1720 120 1720 160 {lab=CTL_15}
 N 1720 220 1720 250 {lab=GND}
-N 390 -130 410 -130 {lab=VSS}
+N 200 -130 220 -130 {lab=VSS}
 N -460 -200 -460 -160 {lab=VSS}
 N -460 -100 -460 -70 {lab=GND}
 N 540 -130 560 -130 {lab=VSS}
@@ -124,7 +113,7 @@ N 2470 -130 2490 -130 {lab=VSS}
 N 2620 -130 2640 -130 {lab=VSS}
 N 2860 -130 2880 -130 {lab=VSS}
 N 3010 -130 3030 -130 {lab=VSS}
-N 450 -90 450 40 {lab=VIN}
+N 260 -90 260 40 {lab=VIN}
 N 600 -90 600 40 {lab=VIN}
 N 790 -90 790 40 {lab=VIN}
 N 940 -90 940 40 {lab=VIN}
@@ -139,20 +128,25 @@ N 2530 -90 2530 40 {lab=VIN}
 N 2680 -90 2680 40 {lab=VIN}
 N 2920 -90 2920 40 {lab=VIN}
 N 3070 -90 3070 40 {lab=VIN}
-N 3230 -90 3230 40 {lab=VIN}
-N -60 40 40 40 {lab=VIN}
-N -60 -90 -60 40 {lab=VIN}
-N -60 -180 -60 -150 {lab=#net1}
-N -60 -360 -60 -240 {lab=VIP}
-N -60 -360 40 -360 {lab=VIP}
-N 40 -360 40 -200 {lab=VIP}
-N 40 -140 40 40 {lab=VIN}
-C {capa.sym} 220 -170 2 0 {name=C2
+N -160 -90 -160 40 {lab=VIN}
+N -160 -180 -160 -150 {lab=#net1}
+N -160 -360 -160 -240 {lab=VIP}
+N -60 -360 -60 -200 {lab=VIP}
+N -60 -140 -60 40 {lab=VIN}
+N 260 40 600 40 {lab=VIN}
+N 260 -360 600 -360 {lab=VIP}
+N -60 40 60 40 {lab=VIN}
+N -60 -360 60 -360 {lab=VIP}
+N -280 40 -160 40 {lab=VIN}
+N -280 -360 -160 -360 {lab=VIP}
+N 60 40 260 40 {lab=VIN}
+N 60 -360 260 -360 {lab=VIP}
+C {capa.sym} 60 -170 0 0 {name=C2
 m=1
 value=2.2389p
 footprint=1206
 device="ceramic capacitor"}
-C {lab_pin.sym} 400 -170 0 0 {name=p1 sig_type=std_logic lab=CTL_1}
+C {lab_pin.sym} 210 -170 0 0 {name=p1 sig_type=std_logic lab=CTL_1}
 C {lab_pin.sym} 550 -170 0 0 {name=p2 sig_type=std_logic lab=CTL_2}
 C {code.sym} -680 -370 0 0 {name=NGSPICE only_toplevel=true value="
 
@@ -494,7 +488,7 @@ C {code.sym} -680 -370 0 0 {name=NGSPICE only_toplevel=true value="
     let IMZ  = imag(ZIN)
     let REZ  = real(ZIN)
     meas ac F_res when IMZ=0
-    write tb_capb.raw ABSZ
+    write tb_capb_g1.raw ABSZ
     set appendwrite
   end
 .endc
@@ -566,51 +560,171 @@ C {gnd.sym} 1620 250 0 0 {name=l30 lab=GND}
 C {vsource.sym} 1720 190 0 0 {name=V15 value=1.1 savecurrent=false}
 C {lab_pin.sym} 1720 120 0 0 {name=p31 sig_type=std_logic lab=CTL_15}
 C {gnd.sym} 1720 250 0 0 {name=l31 lab=GND}
-C {cap_bank_unit.sym} 450 -150 0 0 {name=x1}
-C {lab_pin.sym} 390 -130 0 0 {name=p34 sig_type=std_logic lab=VSS}
+C {capb_unit_gen.sym} 260 -150 0 0 {name=x1
+Ls=47e-9
+Rs=0.471
+f_sr=1870e6
+q_coil=289
+f_op=433e6
+b=4
+schematic="capb_unit.py(@Ls\\,@Rs\\,@f_sr\\,@q_coil\\,@f_op\\,@b\\)"
+tclcommand="edit_file [abs_sym_path capb_unit.py]"}
+C {lab_pin.sym} 200 -130 0 0 {name=p34 sig_type=std_logic lab=VSS}
 C {vsource.sym} -460 -130 0 0 {name=V17 value=0 savecurrent=false}
 C {lab_pin.sym} -460 -200 0 0 {name=p35 sig_type=std_logic lab=VSS}
 C {gnd.sym} -460 -70 0 0 {name=l4 lab=GND}
-C {cap_bank_unit.sym} 600 -150 0 0 {name=x2}
 C {lab_pin.sym} 540 -130 0 0 {name=p36 sig_type=std_logic lab=VSS}
-C {cap_bank_unit.sym} 790 -150 0 0 {name=x3}
 C {lab_pin.sym} 730 -130 0 0 {name=p37 sig_type=std_logic lab=VSS}
-C {cap_bank_unit.sym} 940 -150 0 0 {name=x4}
 C {lab_pin.sym} 880 -130 0 0 {name=p38 sig_type=std_logic lab=VSS}
-C {cap_bank_unit.sym} 1150 -150 0 0 {name=x5}
 C {lab_pin.sym} 1090 -130 0 0 {name=p39 sig_type=std_logic lab=VSS}
-C {cap_bank_unit.sym} 1400 -150 0 0 {name=x6}
 C {lab_pin.sym} 1340 -130 0 0 {name=p40 sig_type=std_logic lab=VSS}
-C {cap_bank_unit.sym} 1550 -150 0 0 {name=x7}
 C {lab_pin.sym} 1490 -130 0 0 {name=p41 sig_type=std_logic lab=VSS}
-C {cap_bank_unit.sym} 1770 -150 0 0 {name=x8}
 C {lab_pin.sym} 1710 -130 0 0 {name=p42 sig_type=std_logic lab=VSS}
-C {cap_bank_unit.sym} 1920 -150 0 0 {name=x9}
 C {lab_pin.sym} 1860 -130 0 0 {name=p43 sig_type=std_logic lab=VSS}
-C {cap_bank_unit.sym} 2140 -150 0 0 {name=x10}
 C {lab_pin.sym} 2080 -130 0 0 {name=p44 sig_type=std_logic lab=VSS}
-C {cap_bank_unit.sym} 2290 -150 0 0 {name=x11}
 C {lab_pin.sym} 2230 -130 0 0 {name=p45 sig_type=std_logic lab=VSS}
-C {cap_bank_unit.sym} 2530 -150 0 0 {name=x12}
 C {lab_pin.sym} 2470 -130 0 0 {name=p46 sig_type=std_logic lab=VSS}
-C {cap_bank_unit.sym} 2680 -150 0 0 {name=x13}
 C {lab_pin.sym} 2620 -130 0 0 {name=p47 sig_type=std_logic lab=VSS}
-C {cap_bank_unit.sym} 2920 -150 0 0 {name=x14}
 C {lab_pin.sym} 2860 -130 0 0 {name=p48 sig_type=std_logic lab=VSS}
-C {cap_bank_unit.sym} 3070 -150 0 0 {name=x15}
 C {lab_pin.sym} 3010 -130 0 0 {name=p49 sig_type=std_logic lab=VSS}
-C {ind.sym} -60 -120 0 0 {name=L1
+C {ind.sym} -160 -120 0 0 {name=L1
 m=1
 value=47n
 footprint=1206
 device=inductor}
-C {res.sym} -60 -210 0 0 {name=R1
+C {res.sym} -160 -210 0 0 {name=R1
 value=0.471
 footprint=1206
 device=resistor
 m=1}
-C {capa.sym} 40 -170 0 0 {name=C1
+C {capa.sym} -60 -170 0 0 {name=C1
 m=1
 value=0.15412p
 footprint=1206
 device="ceramic capacitor"}
+C {capb_unit_gen.sym} 600 -150 0 0 {name=x2
+Ls=47e-9
+Rs=0.471
+f_sr=1870e6
+q_coil=289
+f_op=433e6
+b=4
+schematic="capb_unit.py(@Ls\\,@Rs\\,@f_sr\\,@q_coil\\,@f_op\\,@b\\)"
+tclcommand="edit_file [abs_sym_path capb_unit.py]"}
+C {capb_unit_gen.sym} 790 -150 0 0 {name=x3
+Ls=47e-9
+Rs=0.471
+f_sr=1870e6
+q_coil=289
+f_op=433e6
+b=4
+schematic="capb_unit.py(@Ls\\,@Rs\\,@f_sr\\,@q_coil\\,@f_op\\,@b\\)"
+tclcommand="edit_file [abs_sym_path capb_unit.py]"}
+C {capb_unit_gen.sym} 940 -150 0 0 {name=x4
+Ls=47e-9
+Rs=0.471
+f_sr=1870e6
+q_coil=289
+f_op=433e6
+b=4
+schematic="capb_unit.py(@Ls\\,@Rs\\,@f_sr\\,@q_coil\\,@f_op\\,@b\\)"
+tclcommand="edit_file [abs_sym_path capb_unit.py]"}
+C {capb_unit_gen.sym} 1150 -150 0 0 {name=x5
+Ls=47e-9
+Rs=0.471
+f_sr=1870e6
+q_coil=289
+f_op=433e6
+b=4
+schematic="capb_unit.py(@Ls\\,@Rs\\,@f_sr\\,@q_coil\\,@f_op\\,@b\\)"
+tclcommand="edit_file [abs_sym_path capb_unit.py]"}
+C {capb_unit_gen.sym} 1400 -150 0 0 {name=x6
+Ls=47e-9
+Rs=0.471
+f_sr=1870e6
+q_coil=289
+f_op=433e6
+b=4
+schematic="capb_unit.py(@Ls\\,@Rs\\,@f_sr\\,@q_coil\\,@f_op\\,@b\\)"
+tclcommand="edit_file [abs_sym_path capb_unit.py]"}
+C {capb_unit_gen.sym} 1550 -150 0 0 {name=x7
+Ls=47e-9
+Rs=0.471
+f_sr=1870e6
+q_coil=289
+f_op=433e6
+b=4
+schematic="capb_unit.py(@Ls\\,@Rs\\,@f_sr\\,@q_coil\\,@f_op\\,@b\\)"
+tclcommand="edit_file [abs_sym_path capb_unit.py]"}
+C {capb_unit_gen.sym} 1770 -150 0 0 {name=x8
+Ls=47e-9
+Rs=0.471
+f_sr=1870e6
+q_coil=289
+f_op=433e6
+b=4
+schematic="capb_unit.py(@Ls\\,@Rs\\,@f_sr\\,@q_coil\\,@f_op\\,@b\\)"
+tclcommand="edit_file [abs_sym_path capb_unit.py]"}
+C {capb_unit_gen.sym} 1920 -150 0 0 {name=x9
+Ls=47e-9
+Rs=0.471
+f_sr=1870e6
+q_coil=289
+f_op=433e6
+b=4
+schematic="capb_unit.py(@Ls\\,@Rs\\,@f_sr\\,@q_coil\\,@f_op\\,@b\\)"
+tclcommand="edit_file [abs_sym_path capb_unit.py]"}
+C {capb_unit_gen.sym} 2140 -150 0 0 {name=x10
+Ls=47e-9
+Rs=0.471
+f_sr=1870e6
+q_coil=289
+f_op=433e6
+b=4
+schematic="capb_unit.py(@Ls\\,@Rs\\,@f_sr\\,@q_coil\\,@f_op\\,@b\\)"
+tclcommand="edit_file [abs_sym_path capb_unit.py]"}
+C {capb_unit_gen.sym} 2290 -150 0 0 {name=x11
+Ls=47e-9
+Rs=0.471
+f_sr=1870e6
+q_coil=289
+f_op=433e6
+b=4
+schematic="capb_unit.py(@Ls\\,@Rs\\,@f_sr\\,@q_coil\\,@f_op\\,@b\\)"
+tclcommand="edit_file [abs_sym_path capb_unit.py]"}
+C {capb_unit_gen.sym} 2530 -150 0 0 {name=x12
+Ls=47e-9
+Rs=0.471
+f_sr=1870e6
+q_coil=289
+f_op=433e6
+b=4
+schematic="capb_unit.py(@Ls\\,@Rs\\,@f_sr\\,@q_coil\\,@f_op\\,@b\\)"
+tclcommand="edit_file [abs_sym_path capb_unit.py]"}
+C {capb_unit_gen.sym} 2680 -150 0 0 {name=x13
+Ls=47e-9
+Rs=0.471
+f_sr=1870e6
+q_coil=289
+f_op=433e6
+b=4
+schematic="capb_unit.py(@Ls\\,@Rs\\,@f_sr\\,@q_coil\\,@f_op\\,@b\\)"
+tclcommand="edit_file [abs_sym_path capb_unit.py]"}
+C {capb_unit_gen.sym} 2920 -150 0 0 {name=x14
+Ls=47e-9
+Rs=0.471
+f_sr=1870e6
+q_coil=289
+f_op=433e6
+b=4
+schematic="capb_unit.py(@Ls\\,@Rs\\,@f_sr\\,@q_coil\\,@f_op\\,@b\\)"
+tclcommand="edit_file [abs_sym_path capb_unit.py]"}
+C {capb_unit_gen.sym} 3070 -150 0 0 {name=x15
+Ls=47e-9
+Rs=0.471
+f_sr=1870e6
+q_coil=289
+f_op=433e6
+b=4
+schematic="capb_unit.py(@Ls\\,@Rs\\,@f_sr\\,@q_coil\\,@f_op\\,@b\\)"
+tclcommand="edit_file [abs_sym_path capb_unit.py]"}

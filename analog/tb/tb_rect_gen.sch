@@ -60,7 +60,7 @@ N 1100 -210 1120 -210 {lab=VSS}
 C {vsource.sym} 0 -190 0 1 {name=V1 value="dc 0 sin(0 500m 433Meg)" savecurrent=false}
 C {code_shown.sym} 130 -810 0 0 {name=NGSPICE only_toplevel=false value="
 .param temp=27
-.tran 1n 10u
+.tran 0.2n 50u
 .save VA VB VO1 VO2 VO3 VOUT I(V1) I(V3)
 + @n.x1.xm1.nsg13_lv_nmos[ids] @n.x1.xm2.nsg13_lv_nmos[ids]
 + @n.x1.xm3.nsg13_lv_pmos[ids] @n.x1.xm4.nsg13_lv_pmos[ids]
@@ -78,7 +78,7 @@ C {code_shown.sym} 130 -810 0 0 {name=NGSPICE only_toplevel=false value="
   let id4m3 = @n.x1.xm3.nsg13_lv_pmos[ids]
   let id4m4 = @n.x1.xm4.nsg13_lv_pmos[ids]
   set filetype=ascii
-  write tb_rect_02.raw v(VA) v(VB) v(VO1) v(VO2) v(VO3) v(VOUT) I(V1) I(V3) id1m1 id1m2 id1m3 id1m4 id4m1 id4m2 id4m3 id4m4
+  write tb_rect_g1.raw v(VA) v(VB) v(VO1) v(VO2) v(VO3) v(VOUT) I(V1) I(V3) id1m1 id1m2 id1m3 id1m4 id4m1 id4m2 id4m3 id4m4
 .endc
 "}
 C {vsource.sym} 40 -460 0 0 {name=V2 value=0 savecurrent=false}
@@ -91,10 +91,17 @@ C {code_shown.sym} 910 -770 0 0 {name=MODEL only_toplevel=false value="
 C {lab_pin.sym} 480 -240 0 0 {name=p9 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 540 -360 0 1 {name=p1 sig_type=std_logic lab=VA}
 C {lab_pin.sym} 540 -120 0 1 {name=p3 sig_type=std_logic lab=VB}
-C {rect_01_10k.sym} 540 -240 0 0 {name=x1}
-C {rect_01_10k.sym} 760 -240 0 0 {name=x2}
-C {rect_01_10k.sym} 960 -240 0 0 {name=x3}
-C {rect_01_10k.sym} 1160 -240 0 0 {name=x4}
+C {rect_01_gen.sym} 540 -240 0 0 {name=x1
+Ls=47e-9
+Rs=0.471
+f_sr=1870e6
+q_coil=289
+f_op=433e6
+Vrect=1.6
+Vrfpeak=0.5
+Isys=80e-6
+schematic="rect_unit.py(@Ls\\,@Rs\\,@f_sr\\,@q_coil\\,@f_op\\,@Vrect\\,@Vrfpeak\\,@Isys\\)"
+tclcommand="edit_file [abs_sym_path rect_unit.py]"}
 C {capa.sym} 1280 -190 0 0 {name=C6
 m=1
 value=0.1n
@@ -105,7 +112,7 @@ C {lab_pin.sym} 640 -260 0 1 {name=p13 sig_type=std_logic lab=VO1}
 C {lab_pin.sym} 860 -260 0 1 {name=p14 sig_type=std_logic lab=VO2}
 C {lab_pin.sym} 1060 -260 0 1 {name=p15 sig_type=std_logic lab=VO3}
 C {res.sym} 1420 -90 0 0 {name=R1
-value=320k
+value=20k
 footprint=1206
 device=resistor
 m=1}
@@ -142,3 +149,36 @@ C {lab_pin.sym} 480 -210 0 0 {name=p5 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 700 -210 0 0 {name=p6 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 900 -210 0 0 {name=p7 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 1100 -210 0 0 {name=p11 sig_type=std_logic lab=VSS}
+C {rect_01_gen.sym} 760 -240 0 0 {name=x2
+Ls=47e-9
+Rs=0.471
+f_sr=1870e6
+q_coil=289
+f_op=433e6
+Vrect=1.6
+Vrfpeak=0.5
+Isys=80e-6
+schematic="rect_unit.py(@Ls\\,@Rs\\,@f_sr\\,@q_coil\\,@f_op\\,@Vrect\\,@Vrfpeak\\,@Isys\\)"
+tclcommand="edit_file [abs_sym_path rect_unit.py]"}
+C {rect_01_gen.sym} 960 -240 0 0 {name=x3
+Ls=47e-9
+Rs=0.471
+f_sr=1870e6
+q_coil=289
+f_op=433e6
+Vrect=1.6
+Vrfpeak=0.5
+Isys=80e-6
+schematic="rect_unit.py(@Ls\\,@Rs\\,@f_sr\\,@q_coil\\,@f_op\\,@Vrect\\,@Vrfpeak\\,@Isys\\)"
+tclcommand="edit_file [abs_sym_path rect_unit.py]"}
+C {rect_01_gen.sym} 1160 -240 0 0 {name=x4
+Ls=47e-9
+Rs=0.471
+f_sr=1870e6
+q_coil=289
+f_op=433e6
+Vrect=1.6
+Vrfpeak=0.5
+Isys=80e-6
+schematic="rect_unit.py(@Ls\\,@Rs\\,@f_sr\\,@q_coil\\,@f_op\\,@Vrect\\,@Vrfpeak\\,@Isys\\)"
+tclcommand="edit_file [abs_sym_path rect_unit.py]"}

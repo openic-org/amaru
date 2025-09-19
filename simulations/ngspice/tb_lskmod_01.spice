@@ -1,0 +1,49 @@
+** sch_path: /home/designer/shared/amaru/analog/tb/tb_lskmod_01.sch
+**.subckt tb_lskmod_01
+V2 VSS GND 0
+C5 VIP VIN 0.955p m=1
+XM1 VIP VG VIN VSS sg13_lv_nmos w=10u l=0.13u ng=1 m=1
+V1 VG VSS 0
+L5 net1 VIN 100n m=1
+R1 VIP net1 0.34 m=1
+C1 VIP VIN 0.39578p m=1
+R3 VIP VSS 75k m=1
+R4 VSS VIN 75k m=1
+I0 VIP VIN dc 0 ac 1
+**** begin user architecture code
+
+
+.lib cornerMOSlv.lib mos_tt
+
+
+
+
+
+.save all
+.save V(VIP) V(VIN) V(VIP, VIN)
+.ac dec 1000 1Meg 1000Meg
+
+.control
+  set filetype=ascii        ; ASCII .raw (human-readable)
+  run
+  alter v1 dc = 1.2
+  run
+  let ZIN0  = ac1.v(VIP)-ac1.v(VIN)
+  let ABSZ0 = abs(ZIN0)
+  let IMZ0  = imag(ZIN0)
+  let REZ0  = real(ZIN0)
+  let Q0    = IMZ0/REZ0
+  let ZIN1  = ac2.v(VIP)-ac2.v(VIN)
+  let ABSZ1 = abs(ZIN1)
+  let IMZ1  = imag(ZIN1)
+  let REZ1  = real(ZIN1)
+  let Q1    = IMZ1/REZ1
+  write tb_lskmod_02.raw ABSZ0 Q0 ABSZ1 Q1
+  set appendwrite
+.endc
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end

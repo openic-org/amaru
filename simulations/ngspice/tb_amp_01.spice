@@ -1,0 +1,48 @@
+** sch_path: /home/designer/shared/amaru/analog/tb/tb_amp_01.sch
+**.subckt tb_amp_01 VIM VIP VSS VDD VO
+*.iopin VIM
+*.iopin VIP
+*.iopin VSS
+*.iopin VDD
+*.iopin VO
+C1 VO VSS 1p m=1
+V1 VDD GND 1.5
+E1 VIP net1 net2 VSS 0.5
+V2 VSS GND 0
+E2 VIM net1 net2 VSS -0.5
+V3 net1 GND 0.6
+V4 net2 GND dc 0 ac 1
+XM1 net4 VIP net3 VSS sg13_lv_nmos w=10u l=0.5u ng=1 m=1
+XM2 VO VIM net3 VSS sg13_lv_nmos w=10u l=0.5u ng=1 m=1
+XM3 net4 net4 VDD VDD sg13_lv_pmos w=2u l=1u ng=1 m=1
+XM4 VO net4 VDD VDD sg13_lv_pmos w=2u l=1u ng=1 m=1
+XM5 net3 net5 VSS VSS sg13_lv_nmos w=2u l=2u ng=1 m=1
+XM6 net5 net5 VSS VSS sg13_lv_nmos w=2u l=2u ng=1 m=1
+I0 VDD net5 100n
+**** begin user architecture code
+
+
+.param temp=27
+.save all
++ @n.xm1.nsg13_lv_nmos[ids] @n.xm2.nsg13_lv_nmos[ids]
++ @n.xm3.nsg13_lv_pmos[ids] @n.xm4.nsg13_lv_pmos[ids]
++ @n.xm5.nsg13_lv_nmos[ids] @n.xm6.nsg13_lv_nmos[ids]
++ @n.xm1.nsg13_lv_nmos[gm] @n.xm2.nsg13_lv_nmos[gm]
++ @n.xm3.nsg13_lv_pmos[gm] @n.xm4.nsg13_lv_pmos[gm]
+
+.control
+  op
+  set filetype=ascii
+  write tb_opamp_01.raw
+.endc
+
+
+
+
+.lib cornerMOSlv.lib mos_tt
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end

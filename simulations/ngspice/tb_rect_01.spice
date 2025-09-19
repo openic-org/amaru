@@ -1,22 +1,25 @@
 ** sch_path: /home/designer/shared/amaru/analog/tb/tb_rect_01.sch
 **.subckt tb_rect_01
-V1 VA VB dc 0 sin(0 500m 433Meg)
-C1 VO1 VSS 100f m=1
+V1 net3 VSS dc 0 sin(0 500m 433Meg)
 V2 VSS GND 0
-x1 VA VSS VO1 VB rect_01_10k
-C2 VO2 VSS 100f m=1
-x2 VA VO1 VO2 VB rect_01_10k
-C3 VO3 VSS 100f m=1
-x3 VA VO2 VO3 VB rect_01_10k
-x4 VA VO3 VOUT VB rect_01_10k
-C6 VOUT VSS 100f m=1
-R1 net1 VSS 20k m=1
+x1 VA VSS VO1 VB VSS rect_01_10k
+x2 VA VO1 VO2 VB VSS rect_01_10k
+x3 VA VO2 VO3 VB VSS rect_01_10k
+x4 VA VO3 VOUT VB VSS rect_01_10k
+C6 VOUT VSS 0.1n m=1
+R1 net1 VSS 320k m=1
 V3 VOUT net1 0
+L1 net2 VB 47n m=1
+R2 VA net2 0.471 m=1
+C4 VA VB 0.15412p m=1
+C5 VA VB 2.72p m=1
+L3 net3 VSS 47n m=1
+K1 L3 L1 1
 **** begin user architecture code
 
 
 .param temp=27
-.tran 0.1n 50u
+.tran 1n 10u
 .save VA VB VO1 VO2 VO3 VOUT I(V1) I(V3)
 + @n.x1.xm1.nsg13_lv_nmos[ids] @n.x1.xm2.nsg13_lv_nmos[ids]
 + @n.x1.xm3.nsg13_lv_pmos[ids] @n.x1.xm4.nsg13_lv_pmos[ids]
@@ -34,7 +37,7 @@ V3 VOUT net1 0
   let id4m3 = @n.x1.xm3.nsg13_lv_pmos[ids]
   let id4m4 = @n.x1.xm4.nsg13_lv_pmos[ids]
   set filetype=ascii
-  write tb_rect_01.raw v(VA) v(VB) v(VO1) v(VO2) v(VO3) v(VOUT) I(V1) I(V3) id1m1 id1m2 id1m3 id1m4 id4m1 id4m2 id4m3 id4m4
+  write tb_rect_02.raw v(VA) v(VB) v(VO1) v(VO2) v(VO3) v(VOUT) I(V1) I(V3) id1m1 id1m2 id1m3 id1m4 id4m1 id4m2 id4m3 id4m4
 .endc
 
 
@@ -46,20 +49,22 @@ V3 VOUT net1 0
 **** end user architecture code
 **.ends
 
-* expanding   symbol:  rect_01_10k.sym # of pins=4
+* expanding   symbol:  rect_01_10k.sym # of pins=5
 ** sym_path: /home/designer/shared/amaru/analog/core/rect_01_10k.sym
 ** sch_path: /home/designer/shared/amaru/analog/core/rect_01_10k.sch
-.subckt rect_01_10k VA VL VH VB
+.subckt rect_01_10k VA VL VH VB VSS
 *.iopin VL
 *.iopin VH
 *.iopin VA
 *.iopin VB
-XM1 VL net1 net2 VL sg13_lv_nmos w=200u l=0.13u ng=40 m=1
-XM3 VH net2 net1 VH sg13_lv_pmos w=400u l=0.13u ng=40 m=1
-XM2 VL net2 net1 VL sg13_lv_nmos w=200u l=0.13u ng=40 m=1
-XM4 VH net1 net2 VH sg13_lv_pmos w=400u l=0.13u ng=40 m=1
-C1 VA net1 50p m=1
-C2 net2 VB 50p m=1
+*.iopin VSS
+XM1 VL net1 net2 VL sg13_lv_nmos w=196.97u l=0.13u ng=20 m=1
+XM3 VH net2 net1 VH sg13_lv_pmos w=440.86u l=0.13u ng=50 m=1
+XM2 VL net2 net1 VL sg13_lv_nmos w=196.97u l=0.13u ng=20 m=1
+XM4 VH net1 net2 VH sg13_lv_pmos w=440.86u l=0.13u ng=50 m=1
+C1 VA net1 48.75p m=1
+C2 net2 VB 48.75p m=1
+C3 VH VSS 1.15p m=1
 .ends
 
 .GLOBAL GND

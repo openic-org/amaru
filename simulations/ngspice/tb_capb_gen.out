@@ -2,28 +2,29 @@
 Note: No compatibility mode selected!
 
 
-Circuit: ** sch_path: /home/designer/shared/amaru/analog/tb/tb_cap_bank.sch
+Circuit: ** sch_path: /home/designer/shared/amaru/analog/tb/tb_capb_gen.sch
 
+Error: no such device or model name v16
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
 Using SPARSE 1.3 as Direct Linear Solver
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
 Using SPARSE 1.3 as Direct Linear Solver
-Warning: singular matrix:  check node vin
+Warning: singular matrix:  check node vip
 
 Note: Starting dynamic gmin stepping
-Warning: singular matrix:  check node vin
+Warning: singular matrix:  check node vip
 
 Warning: Dynamic gmin stepping failed
 Note: Starting true gmin stepping
-Warning: singular matrix:  check node vin
+Warning: singular matrix:  check node vip
 
-Warning: singular matrix:  check node vin
+Warning: singular matrix:  check node vip
 
-Warning: singular matrix:  check node vin
+Warning: singular matrix:  check node vip
 
-Warning: singular matrix:  check node vin
+Warning: singular matrix:  check node vip
 
 Warning: True gmin stepping failed
 Note: Starting source stepping
@@ -33,7 +34,8 @@ Note: Transient op finished successfully
 
 No. of Data Rows : 5000
 f_res               =  4.656376e+08
-ASCII raw file "tb_capb.raw"
+ASCII raw file "tb_capb_g1.raw"
+Error: no such device or model name v16
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
 Using SPARSE 1.3 as Direct Linear Solver
@@ -43,7 +45,8 @@ Using SPARSE 1.3 as Direct Linear Solver
 
 No. of Data Rows : 5000
 f_res               =  4.594819e+08
-ASCII raw file "tb_capb.raw"
+ASCII raw file "tb_capb_g1.raw"
+Error: no such device or model name v16
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
 Using SPARSE 1.3 as Direct Linear Solver
@@ -53,7 +56,8 @@ Using SPARSE 1.3 as Direct Linear Solver
 
 No. of Data Rows : 5000
 f_res               =  4.535641e+08
-ASCII raw file "tb_capb.raw"
+ASCII raw file "tb_capb_g1.raw"
+Error: no such device or model name v16
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
 Using SPARSE 1.3 as Direct Linear Solver
@@ -63,7 +67,8 @@ Using SPARSE 1.3 as Direct Linear Solver
 
 No. of Data Rows : 5000
 f_res               =  4.478691e+08
-ASCII raw file "tb_capb.raw"
+ASCII raw file "tb_capb_g1.raw"
+Error: no such device or model name v16
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
 Using SPARSE 1.3 as Direct Linear Solver
@@ -73,7 +78,8 @@ Using SPARSE 1.3 as Direct Linear Solver
 
 No. of Data Rows : 5000
 f_res               =  4.423833e+08
-ASCII raw file "tb_capb.raw"
+ASCII raw file "tb_capb_g1.raw"
+Error: no such device or model name v16
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
 Using SPARSE 1.3 as Direct Linear Solver
@@ -83,7 +89,8 @@ Using SPARSE 1.3 as Direct Linear Solver
 
 No. of Data Rows : 5000
 f_res               =  4.370942e+08
-ASCII raw file "tb_capb.raw"
+ASCII raw file "tb_capb_g1.raw"
+Error: no such device or model name v16
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
 Using SPARSE 1.3 as Direct Linear Solver
@@ -93,7 +100,8 @@ Using SPARSE 1.3 as Direct Linear Solver
 
 No. of Data Rows : 5000
 f_res               =  4.319904e+08
-ASCII raw file "tb_capb.raw"
+ASCII raw file "tb_capb_g1.raw"
+Error: no such device or model name v16
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
 Using SPARSE 1.3 as Direct Linear Solver
@@ -103,7 +111,8 @@ Using SPARSE 1.3 as Direct Linear Solver
 
 No. of Data Rows : 5000
 f_res               =  4.270612e+08
-ASCII raw file "tb_capb.raw"
+ASCII raw file "tb_capb_g1.raw"
+Error: no such device or model name v16
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
 Using SPARSE 1.3 as Direct Linear Solver
@@ -113,7 +122,8 @@ Using SPARSE 1.3 as Direct Linear Solver
 
 No. of Data Rows : 5000
 f_res               =  4.222970e+08
-ASCII raw file "tb_capb.raw"
+ASCII raw file "tb_capb_g1.raw"
+Error: no such device or model name v16
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
 Using SPARSE 1.3 as Direct Linear Solver
@@ -123,7 +133,8 @@ Using SPARSE 1.3 as Direct Linear Solver
 
 No. of Data Rows : 5000
 f_res               =  4.176887e+08
-ASCII raw file "tb_capb.raw"
+ASCII raw file "tb_capb_g1.raw"
+Error: no such device or model name v16
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
 Using SPARSE 1.3 as Direct Linear Solver
@@ -133,7 +144,8 @@ Using SPARSE 1.3 as Direct Linear Solver
 
 No. of Data Rows : 5000
 f_res               =  4.132280e+08
-ASCII raw file "tb_capb.raw"
+ASCII raw file "tb_capb_g1.raw"
+Error: no such device or model name v16
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
 Using SPARSE 1.3 as Direct Linear Solver
@@ -143,7 +155,8 @@ Using SPARSE 1.3 as Direct Linear Solver
 
 No. of Data Rows : 5000
 f_res               =  4.089072e+08
-ASCII raw file "tb_capb.raw"
+ASCII raw file "tb_capb_g1.raw"
+Error: no such device or model name v16
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
 Using SPARSE 1.3 as Direct Linear Solver
@@ -153,7 +166,8 @@ Using SPARSE 1.3 as Direct Linear Solver
 
 No. of Data Rows : 5000
 f_res               =  4.047192e+08
-ASCII raw file "tb_capb.raw"
+ASCII raw file "tb_capb_g1.raw"
+Error: no such device or model name v16
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
 Using SPARSE 1.3 as Direct Linear Solver
@@ -163,7 +177,8 @@ Using SPARSE 1.3 as Direct Linear Solver
 
 No. of Data Rows : 5000
 f_res               =  4.006573e+08
-ASCII raw file "tb_capb.raw"
+ASCII raw file "tb_capb_g1.raw"
+Error: no such device or model name v16
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
 Using SPARSE 1.3 as Direct Linear Solver
@@ -173,7 +188,8 @@ Using SPARSE 1.3 as Direct Linear Solver
 
 No. of Data Rows : 5000
 f_res               =  3.967152e+08
-ASCII raw file "tb_capb.raw"
+ASCII raw file "tb_capb_g1.raw"
+Error: no such device or model name v16
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
 Using SPARSE 1.3 as Direct Linear Solver
@@ -183,23 +199,23 @@ Using SPARSE 1.3 as Direct Linear Solver
 
 No. of Data Rows : 5000
 f_res               =  3.928872e+08
-ASCII raw file "tb_capb.raw"
-ASCII raw file "/home/designer/shared/amaru/simulations/ngspice/tb_cap_bank.raw"
+ASCII raw file "tb_capb_g1.raw"
+ASCII raw file "/home/designer/shared/amaru/simulations/ngspice/tb_capb_gen.raw"
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
 Using SPARSE 1.3 as Direct Linear Solver
 
-Total analysis time (seconds) = 26.1938
+Total analysis time (seconds) = 29.9634
 
-Total elapsed time (seconds) = 27.364 
+Total elapsed time (seconds) = 31.415 
 
 Total DRAM available = 7780.359 MB.
-DRAM currently available = 3553.133 MB.
-Maximum ngspice program size = 2826.863 MB.
-Current ngspice program size = 2312.039 MB.
+DRAM currently available = 3442.258 MB.
+Maximum ngspice program size = 2824.328 MB.
+Current ngspice program size = 2309.465 MB.
 
-Shared ngspice pages =   11.320 MB.
+Shared ngspice pages =   11.180 MB.
 Text (code) pages =    5.980 MB.
 Stack = 0 bytes.
-Library pages = 2357.703 MB.
+Library pages = 2355.168 MB.
 

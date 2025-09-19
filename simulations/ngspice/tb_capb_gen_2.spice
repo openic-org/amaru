@@ -1,6 +1,6 @@
-** sch_path: /home/designer/shared/amaru/analog/tb/tb_cap_bank.sch
-**.subckt tb_cap_bank
-C2 VIN VIP 2.2389p m=1
+** sch_path: /home/designer/shared/amaru/analog/tb/tb_capb_gen_2.sch
+**.subckt tb_capb_gen_2
+C2 VIP VIN 2.7425p m=1
 VPORT VIP VIN dc 0 ac 1
 V1 CTL_1 GND 0
 V2 CTL_2 GND 0
@@ -17,26 +17,25 @@ V12 CTL_12 GND 1.1
 V13 CTL_13 GND 1.1
 V14 CTL_14 GND 1.1
 V15 CTL_15 GND 1.1
-V16 CTL_16 GND 1.1
-x1 VIP VSS CTL_1 VIN cap_bank_unit
+x1 VIP VSS CTL_1 VIN capb_unit_py_47e-9_0_419_1870e6_296_403e6_4
 V17 VSS GND 0
-x2 VIP VSS CTL_2 VIN cap_bank_unit
-x3 VIP VSS CTL_3 VIN cap_bank_unit
-x4 VIP VSS CTL_4 VIN cap_bank_unit
-x5 VIP VSS CTL_5 VIN cap_bank_unit
-x6 VIP VSS CTL_6 VIN cap_bank_unit
-x7 VIP VSS CTL_7 VIN cap_bank_unit
-x8 VIP VSS CTL_8 VIN cap_bank_unit
-x9 VIP VSS CTL_9 VIN cap_bank_unit
-x10 VIP VSS CTL_10 VIN cap_bank_unit
-x11 VIP VSS CTL_11 VIN cap_bank_unit
-x12 VIP VSS CTL_12 VIN cap_bank_unit
-x13 VIP VSS CTL_13 VIN cap_bank_unit
-x14 VIP VSS CTL_14 VIN cap_bank_unit
-x15 VIP VSS CTL_15 VIN cap_bank_unit
 L1 net1 VIN 47n m=1
-R1 VIP net1 0.471 m=1
+R1 VIP net1 0.419 m=1
 C1 VIP VIN 0.15412p m=1
+x2 VIP VSS CTL_2 VIN capb_unit_py_47e-9_0_419_1870e6_296_403e6_4
+x3 VIP VSS CTL_3 VIN capb_unit_py_47e-9_0_419_1870e6_296_403e6_4
+x4 VIP VSS CTL_4 VIN capb_unit_py_47e-9_0_419_1870e6_296_403e6_4
+x5 VIP VSS CTL_5 VIN capb_unit_py_47e-9_0_419_1870e6_296_403e6_4
+x6 VIP VSS CTL_6 VIN capb_unit_py_47e-9_0_419_1870e6_296_403e6_4
+x7 VIP VSS CTL_7 VIN capb_unit_py_47e-9_0_419_1870e6_296_403e6_4
+x8 VIP VSS CTL_8 VIN capb_unit_py_47e-9_0_419_1870e6_296_403e6_4
+x9 VIP VSS CTL_9 VIN capb_unit_py_47e-9_0_419_1870e6_296_403e6_4
+x10 VIP VSS CTL_10 VIN capb_unit_py_47e-9_0_419_1870e6_296_403e6_4
+x11 VIP VSS CTL_11 VIN capb_unit_py_47e-9_0_419_1870e6_296_403e6_4
+x12 VIP VSS CTL_12 VIN capb_unit_py_47e-9_0_419_1870e6_296_403e6_4
+x13 VIP VSS CTL_13 VIN capb_unit_py_47e-9_0_419_1870e6_296_403e6_4
+x14 VIP VSS CTL_14 VIN capb_unit_py_47e-9_0_419_1870e6_296_403e6_4
+x15 VIP VSS CTL_15 VIN capb_unit_py_47e-9_0_419_1870e6_296_403e6_4
 **** begin user architecture code
 
 
@@ -379,7 +378,7 @@ C1 VIP VIN 0.15412p m=1
     let IMZ  = imag(ZIN)
     let REZ  = real(ZIN)
     meas ac F_res when IMZ=0
-    write tb_capb.raw ABSZ
+    write tb_capb_g2.raw ABSZ
     set appendwrite
   end
 .endc
@@ -391,19 +390,35 @@ C1 VIP VIN 0.15412p m=1
 **** end user architecture code
 **.ends
 
-* expanding   symbol:  cap_bank_unit.sym # of pins=4
-** sym_path: /home/designer/shared/amaru/analog/core/cap_bank_unit.sym
-** sch_path: /home/designer/shared/amaru/analog/core/cap_bank_unit.sch
-.subckt cap_bank_unit VA VSS B VB
+* expanding   symbol:  capb_unit_gen.sym # of pins=4
+** sym_path: /home/designer/shared/amaru/analog/core/capb_unit_gen.sym
+** sch_path: /home/designer/shared/amaru/analog/core/capb_unit_gen.sch
+.subckt capb_unit_gen VA VSS B VB
 *.iopin VA
 *.iopin VSS
 *.iopin B
 *.iopin VB
-C1 VA net2 146.47f m=1
-C2 VB net1 146.47f m=1
-XM1 net2 B net1 VSS sg13_lv_nmos w=6.72u l=0.13u ng=1 m=1
-XM2 net1 B VSS VSS sg13_lv_nmos w=6.72u l=0.13u ng=1 m=1
-XM3 net2 B VSS VSS sg13_lv_nmos w=6.72u l=0.13u ng=1 m=1
+C1 VA net2 1f m=1
+C2 VB net1 1f m=1
+XM1 net2 B net1 VSS sg13_lv_nmos w=1u l=0.13u ng=1 m=1
+XM2 net1 B VSS VSS sg13_lv_nmos w=1u l=0.13u ng=1 m=1
+XM3 net2 B VSS VSS sg13_lv_nmos w=1u l=0.13u ng=1 m=1
+.ends
+
+
+* expanding   symbol:  capb_unit.py(47e-9,0.419,1870e6,296,403e6,4) # of pins=4
+** sym_path: /home/designer/shared/amaru/analog/core/capb_unit_gen.sym
+** sch_path: /home/designer/shared/amaru/analog/core/capb_unit.py
+.subckt capb_unit_py_47e-9_0_419_1870e6_296_403e6_4 VA VSS B VB
+*.iopin VA
+*.iopin VSS
+*.iopin B
+*.iopin VB
+C1 VA net2 169.09f m=1
+C2 VB net1 169.09f m=1
+XM1 net2 B net1 VSS sg13_lv_nmos w=7.24u l=0.13u ng=1 m=1
+XM2 net1 B VSS VSS sg13_lv_nmos w=7.24u l=0.13u ng=1 m=1
+XM3 net2 B VSS VSS sg13_lv_nmos w=7.24u l=0.13u ng=1 m=1
 .ends
 
 .GLOBAL GND

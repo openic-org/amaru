@@ -1,0 +1,83 @@
+** sch_path: /home/designer/shared/amaru/analog/tb/tb_opamp_01.sch
+**.subckt tb_opamp_01 VIM VIP VSS VDD VO
+*.iopin VIM
+*.iopin VIP
+*.iopin VSS
+*.iopin VDD
+*.iopin VO
+C1 VO VSS 1p m=1
+V1 VDD GND 1.5
+E1 VIP net1 VINPUT VSS 0.5
+V2 VSS GND 0
+E2 VIM net1 VINPUT VSS -0.5
+V3 net1 GND 0.6
+V4 VINPUT GND dc 0 ac 1
+XM1 net3 VIP net2 VSS sg13_lv_nmos w=10u l=0.25u ng=1 m=1
+XM2 VO VIM net2 VSS sg13_lv_nmos w=10u l=0.25u ng=1 m=1
+XM3 net3 net3 VDD VDD sg13_lv_pmos w=1u l=4u ng=1 m=1
+XM4 VO net3 VDD VDD sg13_lv_pmos w=1u l=4u ng=1 m=1
+XM5 net2 net4 VSS VSS sg13_lv_nmos w=2u l=2u ng=1 m=1
+XM6 net4 net4 VSS VSS sg13_lv_nmos w=2u l=2u ng=1 m=1
+I0 VDD net4 100n
+R10 VO2 VSS 14Meg m=1
+C2 VO2 VSS 50f m=1
+C3 VO2 VSS 1p m=1
+G1 VO2 VSS VINPUT VSS -2e-6
+x1 VDD VO3 VIM2 VIP2 VSS error_amp
+C4 VO3 VSS 1p m=1
+E3 VIP2 net5 VINPUT VSS 0.5
+E4 VIM2 net5 VINPUT VSS -0.5
+V5 net5 GND 0.6
+**** begin user architecture code
+
+
+.param temp=27
+.save all
++ @n.xm1.nsg13_lv_nmos[ids] @n.xm2.nsg13_lv_nmos[ids]
++ @n.xm3.nsg13_lv_pmos[ids] @n.xm4.nsg13_lv_pmos[ids]
++ @n.xm5.nsg13_lv_nmos[ids] @n.xm6.nsg13_lv_nmos[ids]
++ @n.xm1.nsg13_lv_nmos[gm] @n.xm2.nsg13_lv_nmos[gm]
++ @n.xm3.nsg13_lv_pmos[gm] @n.xm4.nsg13_lv_pmos[gm]
++ @n.xm1.nsg13_lv_nmos[gds] @n.xm2.nsg13_lv_nmos[gds]
++ @n.xm3.nsg13_lv_pmos[gds] @n.xm4.nsg13_lv_pmos[gds]
+
+.control
+  ac dec 160 10 1g
+  set filetype=ascii
+  set units=degress
+  write tb_opamp_02.raw vdb(vo) vp(vo) vdb(vo2) vp(vo2) vdb(vo3) vp(vo3)
+  set appendwrite
+  op
+  set filetype=ascii
+  write tb_opamp_02.raw
+.endc
+
+
+
+
+.lib cornerMOSlv.lib mos_tt
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  error_amp.sym # of pins=5
+** sym_path: /home/designer/shared/amaru/analog/core/error_amp.sym
+** sch_path: /home/designer/shared/amaru/analog/core/error_amp.sch
+.subckt error_amp VDD VOUT VREF VFB VSS
+*.ipin VREF
+*.iopin VDD
+*.opin VOUT
+*.ipin VFB
+*.iopin VSS
+XMldo1 net1 VFB net2 VSS sg13_lv_nmos w=1.2u l=0.13u ng=1 m=1
+XMldo4 VOUT net1 VDD VDD sg13_lv_pmos w=2.4u l=0.13u ng=1 m=1
+XMldo2 VOUT VREF net2 VSS sg13_lv_nmos w=1.2u l=0.13u ng=1 m=1
+XMldo3 net1 net1 VDD VDD sg13_lv_pmos w=2.4u l=0.13u ng=1 m=1
+XMldo5 net2 net3 VSS VSS sg13_lv_nmos w=2u l=0.13u ng=1 m=1
+XMldo6 net3 net3 VSS VSS sg13_lv_nmos w=1u l=0.13u ng=1 m=1
+I0 VDD net3 2u
+.ends
+
+.GLOBAL GND
+.end

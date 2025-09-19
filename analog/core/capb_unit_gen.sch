@@ -24,12 +24,12 @@ N -0 -180 0 -160 {lab=VA}
 N -0 160 -0 180 {lab=VB}
 C {capa.sym} 0 -130 0 0 {name=C1
 m=1
-value=146.47f
+value=1f
 footprint=1206
 device="ceramic capacitor"}
 C {capa.sym} 0 130 2 0 {name=C2
 m=1
-value=146.47f
+value=1f
 footprint=1206
 device="ceramic capacitor"}
 C {iopin.sym} 0 -180 0 0 {name=p1 lab=VA}
@@ -40,7 +40,7 @@ C {lab_pin.sym} 130 -140 0 1 {name=p4 sig_type=std_logic lab=B}
 C {lab_pin.sym} 130 140 0 1 {name=p6 sig_type=std_logic lab=B}
 C {sg13g2_pr/sg13_lv_nmos.sym} -20 0 0 0 {name=M1
 l=0.13u
-w=6.72u
+w=1u
 ng=1
 m=1
 model=sg13_lv_nmos
@@ -48,7 +48,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_nmos.sym} 130 100 3 0 {name=M2
 l=0.13u
-w=6.72u
+w=1u
 ng=1
 m=1
 model=sg13_lv_nmos
@@ -56,7 +56,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_nmos.sym} 130 -100 3 1 {name=M3
 l=0.13u
-w=6.72u
+w=1u
 ng=1
 m=1
 model=sg13_lv_nmos

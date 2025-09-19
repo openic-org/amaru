@@ -1,0 +1,14 @@
+** sch_path: /home/designer/shared/amaru/analog/core/rect_01_10k.sch
+**.subckt rect_01_10k VA VL VH VB
+*.iopin VL
+*.iopin VH
+*.iopin VA
+*.iopin VB
+XM1 VL net1 net2 VL sg13_lv_nmos w=150u l=0.13u ng=40 m=1
+XM3 VH net2 net1 VH sg13_lv_pmos w=400u l=0.13u ng=40 m=1
+XM2 VL net2 net1 VL sg13_lv_nmos w=150u l=0.13u ng=40 m=1
+XM4 VH net1 net2 VH sg13_lv_pmos w=400u l=0.13u ng=40 m=1
+C1 VA net1 30p m=1
+C2 net2 VB 30p m=1
+**.ends
+.end

@@ -1,0 +1,89 @@
+** sch_path: /home/designer/shared/amaru/analog/tb/tb_rect_gen_2.sch
+**.subckt tb_rect_gen_2
+V1 net3 VSS dc 0 sin(0 500m 403Meg)
+V2 VSS GND 0
+x1 VA VSS VO1 VB VSS rect_unit_py_47e-9_0_419_1870e6_296_403e6_1_3_0_5_7e-6
+C6 VOUT VSS 0.1n m=1
+R1 net1 VSS 160k m=1
+V3 VOUT net1 0
+L1 net2 VB 47n m=1
+R2 VA net2 0.419 m=1
+C4 VA VB 0.15412p m=1
+C5 VA VB 3.1643p m=1
+L3 net3 VSS 47n m=1
+K1 L3 L1 1
+x2 VA VO1 VO2 VB VSS rect_unit_py_47e-9_0_419_1870e6_296_403e6_1_3_0_5_7e-6
+x3 VA VO2 VOUT VB VSS rect_unit_py_47e-9_0_419_1870e6_296_403e6_1_3_0_5_7e-6
+**** begin user architecture code
+
+
+.param temp=27
+.tran 0.2n 50u
+.save VA VB VO1 VO2 VOUT I(V1) I(V3)
++ @n.x1.xm1.nsg13_lv_nmos[ids] @n.x1.xm2.nsg13_lv_nmos[ids]
++ @n.x1.xm3.nsg13_lv_pmos[ids] @n.x1.xm4.nsg13_lv_pmos[ids]
++ @n.x3.xm1.nsg13_lv_nmos[ids] @n.x3.xm2.nsg13_lv_nmos[ids]
++ @n.x3.xm3.nsg13_lv_pmos[ids] @n.x3.xm4.nsg13_lv_pmos[ids]
+
+.control
+  run
+  let id1m1 = @n.x1.xm1.nsg13_lv_nmos[ids]
+  let id1m2 = @n.x1.xm2.nsg13_lv_nmos[ids]
+  let id1m3 = @n.x1.xm3.nsg13_lv_pmos[ids]
+  let id1m4 = @n.x1.xm4.nsg13_lv_pmos[ids]
+  let id3m1 = @n.x3.xm1.nsg13_lv_nmos[ids]
+  let id3m2 = @n.x3.xm2.nsg13_lv_nmos[ids]
+  let id3m3 = @n.x3.xm3.nsg13_lv_pmos[ids]
+  let id3m4 = @n.x3.xm4.nsg13_lv_pmos[ids]
+  set filetype=ascii
+  write tb_rect_g2.raw v(VA) v(VB) v(VO1) v(VO2) v(VOUT) I(V1) I(V3) id1m1 id1m2 id1m3 id1m4 id3m1 id3m2 id3m3 id3m4
+.endc
+
+
+
+
+.lib cornerMOSlv.lib mos_tt
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  rect_01_10k.sym # of pins=5
+** sym_path: /home/designer/shared/amaru/analog/core/rect_01_10k.sym
+** sch_path: /home/designer/shared/amaru/analog/core/rect_01_10k.sch
+.subckt rect_01_10k VA VL VH VB VSS
+*.iopin VL
+*.iopin VH
+*.iopin VA
+*.iopin VB
+*.iopin VSS
+XM1 VL net1 net2 VL sg13_lv_nmos w=196.97u l=0.13u ng=20 m=1
+XM3 VH net2 net1 VH sg13_lv_pmos w=440.86u l=0.13u ng=50 m=1
+XM2 VL net2 net1 VL sg13_lv_nmos w=196.97u l=0.13u ng=20 m=1
+XM4 VH net1 net2 VH sg13_lv_pmos w=440.86u l=0.13u ng=50 m=1
+C1 VA net1 48.75p m=1
+C2 net2 VB 48.75p m=1
+C3 VH VSS 1.15p m=1
+.ends
+
+
+* expanding   symbol:  rect_unit.py(47e-9,0.419,1870e6,296,403e6,1.3,0.5,7e-6) # of pins=5
+** sym_path: /home/designer/shared/amaru/analog/core/rect_01_10k.sym
+** sch_path: /home/designer/shared/amaru/analog/core/rect_unit.py
+.subckt rect_unit_py_47e-9_0_419_1870e6_296_403e6_1_3_0_5_7e-6 VA VL VH VB VSS
+*.iopin VL
+*.iopin VH
+*.iopin VA
+*.iopin VB
+*.iopin VSS
+XM1 VL net1 net2 VL sg13_lv_nmos w=8.68u l=0.13u ng=1 m=1
+XM2 VL net2 net1 VL sg13_lv_nmos w=8.68u l=0.13u ng=1 m=1
+XM3 VH net2 net1 VH sg13_lv_pmos w=51.1u l=0.13u ng=6 m=1
+XM4 VH net1 net2 VH sg13_lv_pmos w=51.1u l=0.13u ng=6 m=1
+C1 VA net1 4.74p m=1
+C2 net2 VB 4.74p m=1
+C3 VH VSS 0.13p m=1
+.ends
+
+.GLOBAL GND
+.end

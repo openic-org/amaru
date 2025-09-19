@@ -1,0 +1,38 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: ** sch_path: /home/designer/shared/amaru/analog/tb/tb_coil_02.sch
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+No. of Data Rows : 3001
+
+Error: measure  f_res  when(WHEN) : out of interval
+ meas ac f_res when imz=0 failed!
+
+ASCII raw file "tb_coil2.raw"
+ASCII raw file "/home/designer/shared/amaru/simulations/ngspice/tb_coil_02.raw"
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Total analysis time (seconds) = 0.00383636
+
+Total elapsed time (seconds) = 0.074 
+
+Total DRAM available = 7780.359 MB.
+DRAM currently available = 5523.676 MB.
+Maximum ngspice program size =   26.695 MB.
+Current ngspice program size =   15.652 MB.
+
+Shared ngspice pages =   10.953 MB.
+Text (code) pages =    5.980 MB.
+Stack = 0 bytes.
+Library pages =    4.660 MB.
+

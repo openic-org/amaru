@@ -1,0 +1,41 @@
+** sch_path: /home/designer/shared/amaru/analog/tb/tb_coil_02.sch
+**.subckt tb_coil_02
+L1 net1 VIN 47n m=1
+R1 VIP net1 0.471 m=1
+C1 VIP VIN 0.15412p m=1
+V17 VSS GND 0
+R2 VIP VSS 100Meg m=1
+R3 VSS VIN 100Meg m=1
+I0 VIP VIN dc 0 ac 1
+**** begin user architecture code
+
+
+
+.save all
+.save V(VIP) V(VIN) V(VIP, VIN)
+.save I(VPORT)
+
+
+.control
+  set filetype=ascii        ; ASCII .raw (human-readable)
+    run
+    ac dec 1000 1Meg 1000Meg
+    *tran 0.1u 100u
+    let ZIN  = v(VIP, VIN)
+    let ABSZ = abs(ZIN)
+    let IMZ  = imag(ZIN)
+    let REZ  = real(ZIN)
+    let Q    = IMZ/REZ
+    meas ac F_res when IMZ=0
+    write tb_coil2.raw ABSZ Q abs(REZ)
+    set appendwrite
+.endc
+
+
+
+.lib cornerMOSlv.lib mos_tt
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end
