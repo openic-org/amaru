@@ -1,0 +1,254 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: ** sch_path: /home/designer/shared/amaru/analog/tb/tb_wpdt_u1_gen.sch
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+Warning: singular matrix:  check node l3#branch
+
+Note: Starting dynamic gmin stepping
+Warning: singular matrix:  check node l3#branch
+
+Warning: Dynamic gmin stepping failed
+Note: Starting true gmin stepping
+Warning: singular matrix:  check node l3#branch
+
+Warning: singular matrix:  check node l3#branch
+
+Warning: singular matrix:  check node l3#branch
+
+Warning: singular matrix:  check node l3#branch
+
+Warning: True gmin stepping failed
+Note: Starting source stepping
+Warning: source stepping failed
+Note: Transient op started
+Note: Transient op finished successfully
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+net2                                         0
+vss                                          0
+x1.net1                            -0.00260538
+x1.net2                            -0.00260538
+vo1                                -0.00199071
+va                                 -0.00264985
+vb                                 -0.00264985
+vrect                              -0.00970432
+vldo                              -4.11039e-09
+net4                              -4.11039e-09
+net1                               -0.00264985
+x2.net1                            -0.00262618
+x2.net2                            -0.00262618
+vo2                                -0.00200043
+x3.net1                            -0.00262709
+x3.net2                            -0.00262709
+vo3                                -0.00204663
+x4.net1                            -0.00279815
+x4.net2                            -0.00279815
+ctl_1                                      1.2
+ctl_2                                      1.2
+ctl_3                                      1.2
+ctl_4                                      1.2
+ctl_5                                      1.2
+ctl_6                                      1.2
+ctl_7                                        0
+ctl_8                                        0
+ctl_9                                        0
+ctl_10                                       0
+ctl_11                                       0
+ctl_12                                       0
+ctl_13                                       0
+ctl_14                                       0
+ctl_15                                       0
+x5.net2                           -6.73162e-05
+x5.net1                           -6.73162e-05
+x6.net2                           -6.73162e-05
+x6.net1                           -6.73162e-05
+x7.net2                           -6.73162e-05
+x7.net1                           -6.73162e-05
+x8.net2                           -6.73162e-05
+x8.net1                           -6.73162e-05
+x9.net2                           -6.73162e-05
+x9.net1                           -6.73162e-05
+x10.net2                          -6.73162e-05
+x10.net1                          -6.73162e-05
+x11.net2                           -0.00225713
+x11.net1                           -0.00225713
+x12.net2                           -0.00225713
+x12.net1                           -0.00225713
+x13.net2                           -0.00225713
+x13.net1                           -0.00225713
+x14.net2                           -0.00225713
+x14.net1                           -0.00225713
+x15.net2                           -0.00225713
+x15.net1                           -0.00225713
+x16.net2                           -0.00225713
+x16.net1                           -0.00225713
+x17.net2                           -0.00225713
+x17.net1                           -0.00225713
+x18.net2                           -0.00225713
+x18.net1                           -0.00225713
+x19.net2                           -0.00225713
+x19.net1                           -0.00225713
+vg                                           0
+vref                                       0.6
+net3                              -2.99955e-05
+x21.vg                            -2.70139e-05
+x21.x1.net2                        -0.00058436
+x21.x1.net1                        -0.00010505
+x21.x1.net3                           0.187454
+l3#branch                         -1.29825e-15
+l1#branch                          1.28396e-15
+v20#branch                         1.81884e-07
+v19#branch                         1.09192e-08
+v18#branch                         3.44564e-08
+v17#branch                         3.44564e-08
+v16#branch                         3.44564e-08
+v15#branch                         3.44564e-08
+v14#branch                         3.44564e-08
+v13#branch                         3.44564e-08
+v12#branch                         3.44564e-08
+v11#branch                         3.44564e-08
+v10#branch                         3.44564e-08
+v9#branch                           4.1299e-07
+v8#branch                           4.1299e-07
+v7#branch                           4.1299e-07
+v6#branch                           4.1299e-07
+v5#branch                           4.1299e-07
+v4#branch                           4.1299e-07
+v3#branch                         -1.57125e-13
+v2#branch                         -2.78807e-06
+v1#branch                          1.29825e-15
+
+
+No. of Data Rows : 6395756
+ASCII raw file "tb_wpdt_g1.raw"
+ASCII raw file "/home/designer/shared/amaru/simulations/ngspice/tb_wpdt_u1_gen.raw"
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+No. of Data Columns : 18  
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+net2                                         0
+vss                                          0
+x1.net1                             -0.0934634
+x1.net2                             -0.0934634
+vo1                                  -0.135537
+va                                           0
+vb                                           0
+vrect                                -0.542335
+vldo                               -0.00231492
+net4                               -0.00231492
+net1                                         0
+x2.net1                              -0.229009
+x2.net2                              -0.229009
+vo2                                  -0.271092
+x3.net1                              -0.364587
+x3.net2                              -0.364587
+vo3                                  -0.406685
+x4.net1                              -0.500215
+x4.net2                              -0.500215
+ctl_1                                      1.2
+ctl_2                                      1.2
+ctl_3                                      1.2
+ctl_4                                      1.2
+ctl_5                                      1.2
+ctl_6                                      1.2
+ctl_7                                        0
+ctl_8                                        0
+ctl_9                                        0
+ctl_10                                       0
+ctl_11                                       0
+ctl_12                                       0
+ctl_13                                       0
+ctl_14                                       0
+ctl_15                                       0
+x5.net2                            2.18848e-08
+x5.net1                            2.18848e-08
+x6.net2                            2.18848e-08
+x6.net1                            2.18848e-08
+x7.net2                            2.18848e-08
+x7.net1                            2.18848e-08
+x8.net2                            2.18848e-08
+x8.net1                            2.18848e-08
+x9.net2                            2.18848e-08
+x9.net1                            2.18848e-08
+x10.net2                           2.18848e-08
+x10.net1                           2.18848e-08
+x11.net2                                     0
+x11.net1                                     0
+x12.net2                                     0
+x12.net1                                     0
+x13.net2                                     0
+x13.net1                                     0
+x14.net2                                     0
+x14.net1                                     0
+x15.net2                                     0
+x15.net1                                     0
+x16.net2                                     0
+x16.net1                                     0
+x17.net2                                     0
+x17.net1                                     0
+x18.net2                                     0
+x18.net1                                     0
+x19.net2                                     0
+x19.net1                                     0
+vg                                           0
+vref                                       0.6
+net3                              -0.000925968
+x21.vg                            -0.000112885
+x21.x1.net2                         -0.0044338
+x21.x1.net1                       -0.000112832
+x21.x1.net3                           0.187469
+l3#branch                                    0
+l1#branch                                    0
+v20#branch                        -2.75435e-11
+v19#branch                                   0
+v18#branch                                   0
+v17#branch                                   0
+v16#branch                                   0
+v15#branch                                   0
+v14#branch                                   0
+v13#branch                                   0
+v12#branch                                   0
+v11#branch                                   0
+v10#branch                                   0
+v9#branch                         -7.26464e-10
+v8#branch                         -7.26464e-10
+v7#branch                         -7.26464e-10
+v6#branch                         -7.26464e-10
+v5#branch                         -7.26464e-10
+v4#branch                         -7.26464e-10
+v3#branch                         -8.84909e-08
+v2#branch                          4.34447e-09
+v1#branch                                    0
+
+
+No. of Data Rows : 6876672
+
+Total analysis time (seconds) = 44717.5
+
+Total elapsed time (seconds) = 44934.041 
+
+Total DRAM available = 7780.359 MB.
+DRAM currently available = 4061.691 MB.
+Maximum ngspice program size = 1864.125 MB.
+Current ngspice program size = 1304.516 MB.
+
+Shared ngspice pages =   11.195 MB.
+Text (code) pages =    5.980 MB.
+Stack = 0 bytes.
+Library pages = 1394.965 MB.
+

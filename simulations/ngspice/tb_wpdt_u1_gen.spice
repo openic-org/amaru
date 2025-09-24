@@ -1,0 +1,235 @@
+** sch_path: /home/designer/shared/amaru/analog/tb/tb_wpdt_u1_gen.sch
+**.subckt tb_wpdt_u1_gen
+V1 net2 VSS dc 0 sin(0 500m 433Meg)
+V2 VSS GND 0
+x1 VA VSS VO1 VB VSS rect_unit_py_47e-9_0_471_1870e6_289_433e6_1_6_0_5_80e-6
+C6 VRECT VSS 0.1n m=1
+V3 VLDO net4 0
+L1 net1 VB 47n m=1
+R2 VA net1 0.471 m=1
+C4 VA VB 0.15412p m=1
+C5 VA VB 2.2389p m=1
+L3 net2 VSS 47n m=1
+K1 L3 L1 1
+x2 VA VO1 VO2 VB VSS rect_unit_py_47e-9_0_471_1870e6_289_433e6_1_6_0_5_80e-6
+x3 VA VO2 VO3 VB VSS rect_unit_py_47e-9_0_471_1870e6_289_433e6_1_6_0_5_80e-6
+x4 VA VO3 VRECT VB VSS rect_unit_py_47e-9_0_471_1870e6_289_433e6_1_6_0_5_80e-6
+V4 CTL_1 GND 1.2
+V5 CTL_2 GND 1.2
+V6 CTL_3 GND 1.2
+V7 CTL_4 GND 1.2
+V8 CTL_5 GND 1.2
+V9 CTL_6 GND 1.2
+V10 CTL_7 GND 0
+V11 CTL_8 GND 0
+V12 CTL_9 GND 0
+V13 CTL_10 GND 0
+V14 CTL_11 GND 0
+V15 CTL_12 GND 0
+V16 CTL_13 GND 0
+V17 CTL_14 GND 0
+V18 CTL_15 GND 0
+x5 VA VSS CTL_1 VB capb_unit_py_47e-9_0_471_1870e6_289_433e6_4
+x6 VA VSS CTL_2 VB capb_unit_py_47e-9_0_471_1870e6_289_433e6_4
+x7 VA VSS CTL_3 VB capb_unit_py_47e-9_0_471_1870e6_289_433e6_4
+x8 VA VSS CTL_4 VB capb_unit_py_47e-9_0_471_1870e6_289_433e6_4
+x9 VA VSS CTL_5 VB capb_unit_py_47e-9_0_471_1870e6_289_433e6_4
+x10 VA VSS CTL_6 VB capb_unit_py_47e-9_0_471_1870e6_289_433e6_4
+x11 VA VSS CTL_7 VB capb_unit_py_47e-9_0_471_1870e6_289_433e6_4
+x12 VA VSS CTL_8 VB capb_unit_py_47e-9_0_471_1870e6_289_433e6_4
+x13 VA VSS CTL_9 VB capb_unit_py_47e-9_0_471_1870e6_289_433e6_4
+x14 VA VSS CTL_10 VB capb_unit_py_47e-9_0_471_1870e6_289_433e6_4
+x15 VA VSS CTL_11 VB capb_unit_py_47e-9_0_471_1870e6_289_433e6_4
+x16 VA VSS CTL_12 VB capb_unit_py_47e-9_0_471_1870e6_289_433e6_4
+x17 VA VSS CTL_13 VB capb_unit_py_47e-9_0_471_1870e6_289_433e6_4
+x18 VA VSS CTL_14 VB capb_unit_py_47e-9_0_471_1870e6_289_433e6_4
+x19 VA VSS CTL_15 VB capb_unit_py_47e-9_0_471_1870e6_289_433e6_4
+V19 VG VSS 0
+x20 VA VSS VG VB lskmod_py_47e-9_0_471_1870e6_289_433e6
+V20 VREF VSS 0.6
+R3 net4 VSS 26.16k m=1
+x21 VREF VLDO net3 VSS net3 VRECT ldo01_py_60e-6_1_5_1_6_0_6
+**** begin user architecture code
+
+
+.param temp=27
+.tran 2n 2000u
+.save VA VB VO1 VO2 VO3 VRECT VLDO I(V1) I(V3)
++ @n.x1.xm1.nsg13_lv_nmos[ids] @n.x1.xm2.nsg13_lv_nmos[ids]
++ @n.x1.xm3.nsg13_lv_pmos[ids] @n.x1.xm4.nsg13_lv_pmos[ids]
++ @n.x4.xm1.nsg13_lv_nmos[ids] @n.x4.xm2.nsg13_lv_nmos[ids]
++ @n.x4.xm3.nsg13_lv_pmos[ids] @n.x4.xm4.nsg13_lv_pmos[ids]
+
+.control
+  run
+  let id1m1 = @n.x1.xm1.nsg13_lv_nmos[ids]
+  let id1m2 = @n.x1.xm2.nsg13_lv_nmos[ids]
+  let id1m3 = @n.x1.xm3.nsg13_lv_pmos[ids]
+  let id1m4 = @n.x1.xm4.nsg13_lv_pmos[ids]
+  let id4m1 = @n.x4.xm1.nsg13_lv_nmos[ids]
+  let id4m2 = @n.x4.xm2.nsg13_lv_nmos[ids]
+  let id4m3 = @n.x4.xm3.nsg13_lv_pmos[ids]
+  let id4m4 = @n.x4.xm4.nsg13_lv_pmos[ids]
+  set filetype=ascii
+  write tb_wpdt_g1.raw v(VA) v(VB) v(VO1) v(VO2) v(VO3) v(VRECT) v(VLDO) I(V1) I(V3) id1m1 id1m2 id1m3 id1m4 id4m1 id4m2 id4m3 id4m4
+.endc
+
+
+
+
+.lib cornerMOSlv.lib mos_tt
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  rect_01_gen.sym # of pins=5
+** sym_path: /home/designer/shared/amaru/analog/core/rect_01_gen.sym
+** sch_path: /home/designer/shared/amaru/analog/core/rect_01_gen.sch
+.subckt rect_01_gen VA VL VH VB VSS
+*.iopin VL
+*.iopin VH
+*.iopin VA
+*.iopin VB
+*.iopin VSS
+XM1 VL net1 net2 VL sg13_lv_nmos w=1u l=0.13u ng=1 m=1
+XM3 VH net2 net1 VH sg13_lv_pmos w=1u l=0.13u ng=1 m=1
+XM2 VL net2 net1 VL sg13_lv_nmos w=1u l=0.13u ng=1 m=1
+XM4 VH net1 net2 VH sg13_lv_pmos w=1u l=0.13u ng=1 m=1
+C1 VA net1 1p m=1
+C2 net2 VB 1p m=1
+C3 VH VSS 1f m=1
+.ends
+
+
+* expanding   symbol:  capb_unit_gen.sym # of pins=4
+** sym_path: /home/designer/shared/amaru/analog/core/capb_unit_gen.sym
+** sch_path: /home/designer/shared/amaru/analog/core/capb_unit_gen.sch
+.subckt capb_unit_gen VA VSS B VB
+*.iopin VA
+*.iopin VSS
+*.iopin B
+*.iopin VB
+C1 VA net2 1f m=1
+C2 VB net1 1f m=1
+XM1 net2 B net1 VSS sg13_lv_nmos w=1u l=0.13u ng=1 m=1
+XM2 net1 B VSS VSS sg13_lv_nmos w=1u l=0.13u ng=1 m=1
+XM3 net2 B VSS VSS sg13_lv_nmos w=1u l=0.13u ng=1 m=1
+.ends
+
+
+* expanding   symbol:  lskmod_gen.sym # of pins=4
+** sym_path: /home/designer/shared/amaru/analog/core/lskmod_gen.sym
+** sch_path: /home/designer/shared/amaru/analog/core/lskmod_gen.sch
+.subckt lskmod_gen VA VSS D VB
+*.iopin VA
+*.iopin VSS
+*.iopin D
+*.iopin VB
+XM1 VA D VB VSS sg13_lv_nmos w=1u l=0.13u ng=1 m=1
+.ends
+
+
+* expanding   symbol:  ldo_01_gen.sym # of pins=6
+** sym_path: /home/designer/shared/amaru/analog/core/ldo_01_gen.sym
+** sch_path: /home/designer/shared/amaru/analog/core/ldo_01_gen.sch
+.subckt ldo_01_gen VREF VLDO VB VSS VA VDD
+*.iopin VREF
+*.iopin VLDO
+*.iopin VDD
+*.iopin VB
+*.iopin VSS
+*.iopin VA
+C1 VLDO VSS 1n m=1
+x1 VDD VB VG VSS VREF opamp_01
+XM1 VLDO VG VDD VDD sg13_lv_pmos w=1u l=0.13u ng=1 m=1
+R2 VA VSS 500k m=1
+R1 VLDO VA 500k m=1
+.ends
+
+
+* expanding   symbol:  rect_unit.py(47e-9,0.471,1870e6,289,433e6,1.6,0.5,80e-6) # of pins=5
+** sym_path: /home/designer/shared/amaru/analog/core/rect_01_gen.sym
+** sch_path: /home/designer/shared/amaru/analog/core/rect_unit.py
+.subckt rect_unit_py_47e-9_0_471_1870e6_289_433e6_1_6_0_5_80e-6 VA VL VH VB VSS
+*.iopin VL
+*.iopin VH
+*.iopin VA
+*.iopin VB
+*.iopin VSS
+XM1 VL net1 net2 VL sg13_lv_nmos w=196.97u l=0.13u ng=20 m=1
+XM2 VL net2 net1 VL sg13_lv_nmos w=196.97u l=0.13u ng=20 m=1
+XM3 VH net2 net1 VH sg13_lv_pmos w=440.86u l=0.13u ng=45 m=1
+XM4 VH net1 net2 VH sg13_lv_pmos w=440.86u l=0.13u ng=45 m=1
+C1 VA net1 48.75p m=1
+C2 net2 VB 48.75p m=1
+C3 VH VSS 1.15p m=1
+.ends
+
+
+* expanding   symbol:  capb_unit.py(47e-9,0.471,1870e6,289,433e6,4) # of pins=4
+** sym_path: /home/designer/shared/amaru/analog/core/capb_unit_gen.sym
+** sch_path: /home/designer/shared/amaru/analog/core/capb_unit.py
+.subckt capb_unit_py_47e-9_0_471_1870e6_289_433e6_4 VA VSS B VB
+*.iopin VA
+*.iopin VSS
+*.iopin B
+*.iopin VB
+C1 VA net2 146.47f m=1
+C2 VB net1 146.47f m=1
+XM1 net2 B net1 VSS sg13_lv_nmos w=6.72u l=0.13u ng=1 m=1
+XM2 net1 B VSS VSS sg13_lv_nmos w=6.72u l=0.13u ng=1 m=1
+XM3 net2 B VSS VSS sg13_lv_nmos w=6.72u l=0.13u ng=1 m=1
+.ends
+
+
+* expanding   symbol:  lskmod.py(47e-9,0.471,1870e6,289,433e6) # of pins=4
+** sym_path: /home/designer/shared/amaru/analog/core/lskmod_gen.sym
+** sch_path: /home/designer/shared/amaru/analog/core/lskmod.py
+.subckt lskmod_py_47e-9_0_471_1870e6_289_433e6 VA VSS D VB
+*.iopin VA
+*.iopin VSS
+*.iopin D
+*.iopin VB
+XM1 VA D VB VSS sg13_lv_nmos w=3.91u l=0.13u ng=1 m=1
+.ends
+
+
+* expanding   symbol:  ldo01.py(60e-6,1.5,1.6,0.6) # of pins=6
+** sym_path: /home/designer/shared/amaru/analog/core/ldo_01_gen.sym
+** sch_path: /home/designer/shared/amaru/analog/core/ldo01.py
+.subckt ldo01_py_60e-6_1_5_1_6_0_6 VREF VLDO VB VSS VA VDD
+*.iopin VREF
+*.iopin VLDO
+*.iopin VDD
+*.iopin VB
+*.iopin VSS
+*.iopin VA
+C1 VLDO VSS 392.5n m=1
+R1 VLDO VA 750.0k m=1
+R2 VA VSS 500.0k m=1
+XM1 VLDO VG VDD VDD sg13_lv_pmos w=148.38u l=0.25u ng=15 m=1
+x1 VDD VB VG VSS VREF opamp_01
+.ends
+
+
+* expanding   symbol:  opamp_01.sym # of pins=5
+** sym_path: /home/designer/shared/amaru/analog/core/opamp_01.sym
+** sch_path: /home/designer/shared/amaru/analog/core/opamp_01.sch
+.subckt opamp_01 VDD VIP VO VSS VIM
+*.iopin VIM
+*.iopin VIP
+*.iopin VSS
+*.iopin VDD
+*.iopin VO
+XM1 net2 VIP net1 VSS sg13_lv_nmos w=10u l=0.25u ng=1 m=1
+XM2 VO VIM net1 VSS sg13_lv_nmos w=10u l=0.25u ng=1 m=1
+XM3 net2 net2 VDD VDD sg13_lv_pmos w=1u l=4u ng=1 m=1
+XM4 VO net2 VDD VDD sg13_lv_pmos w=1u l=4u ng=1 m=1
+XM5 net1 net3 VSS VSS sg13_lv_nmos w=2u l=2u ng=1 m=1
+XM6 net3 net3 VSS VSS sg13_lv_nmos w=2u l=2u ng=1 m=1
+I0 VDD net3 100n
+.ends
+
+.GLOBAL GND
+.end
