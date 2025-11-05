@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: Amaru
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - name: OpenIC
+    city: Eagan
+    country: US
+    post-code: '55122'
+    region: Minnesota
+  - given-names: Manuel
+    family-names: Monge
+    email: manuel@openic.org
+    affiliation: OpenIC
+    orcid: 'https://orcid.org/0000-0001-9799-0693'
+repository-code: 'https://github.com/openic-org/amaru'
+license: Apache-2.0
